@@ -46,17 +46,17 @@
 
 #### 参考步骤
 
-- <img src="./images/add-package-1.png?raw=true" width="250"> 
-- 此处输入源地址：<img src="./images/add-package-2.png?raw=true" width="500">
-- 加载中：<img src="./images/add-package-3.png?raw=true" width="500">
-- 点击Add Package：<img src="./images/add-package-4.png?raw=true" width="500">
-- 此处查看，如图为添加成功：<img src="./images/add-package-5.png?raw=true" width="500">
-- 如果没有bytedesk-swift，则需要手动添加：<img src="./images/add-package-6.png?raw=true" width="500">
-- 添加成功之后，便可以在源文件中引用：<img src="./images/add-package-7.png?raw=true" width="500">
+- <img src="https://www.weikefu.net/assets/spm/add-package-1.png" width="250"> 
+- 此处输入源地址：<img src="https://www.weikefu.net/assets/spm/add-package-2.png" width="500">
+- 加载中：<img src="https://www.weikefu.net/assets/spm/add-package-3.png" width="500">
+- 点击Add Package：<img src="https://www.weikefu.net/assets/spm/add-package-4.png" width="500">
+- 此处查看，如图为添加成功：<img src="https://www.weikefu.net/assets/spm/add-package-5.png" width="500">
+- 如果没有bytedesk-swift，则需要手动添加：<img src="https://www.weikefu.net/assets/spm/add-package-6.png" width="500">
+- 添加成功之后，便可以在源文件中引用：<img src="https://www.weikefu.net/assets/spm/add-package-7.png" width="500">
 
 #### 如果加载失败，建议重置
 
-- <img src="./images/add-package-8.png?raw=true" width="500">
+- <img src="https://www.weikefu.net/assets/spm/add-package-8.png" width="500">
   
 ### 4. 本地集成
 
