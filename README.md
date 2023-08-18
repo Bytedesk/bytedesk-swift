@@ -44,8 +44,18 @@
 - 源地址2-github：<https://github.com/Bytedesk/bytedesk-swift>
 - 国内用户建议使用源地址1
 
-#### 步骤1
+#### 参考步骤
 
 - <img src="https://raw.githubusercontent.com/Bytedesk/bytedesk-swift/main/images/add-package-1.png?raw=true" width="250">
+- <img src="https://raw.githubusercontent.com/Bytedesk/bytedesk-swift/main/images/add-package-2.png?raw=true" width="250">
+- <img src="https://raw.githubusercontent.com/Bytedesk/bytedesk-swift/main/images/add-package-3.png?raw=true" width="250">
+- <img src="https://raw.githubusercontent.com/Bytedesk/bytedesk-swift/main/images/add-package-4.png?raw=true" width="250">
+- <img src="https://raw.githubusercontent.com/Bytedesk/bytedesk-swift/main/images/add-package-5.png?raw=true" width="250">
+- <img src="https://raw.githubusercontent.com/Bytedesk/bytedesk-swift/main/images/add-package-6.png?raw=true" width="250">
+- <img src="https://raw.githubusercontent.com/Bytedesk/bytedesk-swift/main/images/add-package-7.png?raw=true" width="250">
+
+#### 如果加载失败，建议重置
+
+- <img src="https://raw.githubusercontent.com/Bytedesk/bytedesk-swift/main/images/add-package-8.png?raw=true" width="250">
   
 ### 4. 本地集成
