@@ -61,3 +61,20 @@
 ### 4. 本地集成
 
 - 此方法适用于有自定义界面需求的开发者
+
+
+## 技术支持
+
+- QQ-3群: 825257535
+- 公众号：
+- <img src="https://www.weikefu.net/assets/img/luobosi_mp.png" width="250">
+
+## 其他
+
+- [UniApp SDK](https://github.com/bytedesk/bytedesk-uniapp)
+- [iOS SDK](https://github.com/bytedesk/bytedesk-ios)
+- [Android SDK](https://github.com/bytedesk/bytedesk-android)
+- [Web 端接口](https://github.com/bytedesk/bytedesk-web)
+- [微信公众号/小程序接口](https://github.com/bytedesk/bytedesk-wechat)
+- [服务器端接口](https://github.com/bytedesk/bytedesk-server)
+- [机器人](https://github.com/bytedesk/bytedesk-chatbot)
