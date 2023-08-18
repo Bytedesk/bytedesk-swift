@@ -1,4 +1,4 @@
-# 萝卜丝智能客服 - Swift版100%开源客服SDK
+# 萝卜丝智能客服 - Swift版客服SDK
 
 - [官网](https://www.weikefu.net/)
 - [价格](https://www.weikefu.net/pages/price.html)
@@ -23,6 +23,7 @@
 
 ## 源码及Demo下载
 
+- [Gitee](https://gitee.com/270580156/bytedesk-swift)
 - [Github](https://github.com/Bytedesk/bytedesk-swift)
 
 ## 集成方式（4种）
@@ -39,6 +40,6 @@
 
 ### 3. Swift Package Manager (SPM)
 
-- <https://github.com/Bytedesk/bytedesk-swift>
+- 源地址：<https://github.com/Bytedesk/bytedesk-swift>
 
 ### 4. 本地集成
