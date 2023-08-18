@@ -42,4 +42,8 @@
 
 - 源地址：<https://github.com/Bytedesk/bytedesk-swift>
 
+#### 步骤1
+
+- <img src="https://raw.githubusercontent.com/Bytedesk/bytedesk-swift/main/images/add-package-1.png?raw=true" width="250">
+  
 ### 4. 本地集成
