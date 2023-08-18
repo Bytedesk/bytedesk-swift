@@ -21,6 +21,7 @@
 		3D27FF192A8F5011005C8744 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27FF122A8F5011005C8744 /* SwitchView.swift */; };
 		3D27FF1A2A8F5011005C8744 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27FF132A8F5011005C8744 /* ChatView.swift */; };
 		3D27FF1B2A8F5011005C8744 /* H5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27FF142A8F5011005C8744 /* H5View.swift */; };
+		3D27FF202A8F53C6005C8744 /* bytedesk-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 3D27FF1F2A8F53C6005C8744 /* bytedesk-swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,6 @@
 		3D27FEF82A8F4F45005C8744 /* BytedeskDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BytedeskDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D27FEFC2A8F4F45005C8744 /* BytedeskDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytedeskDemoUITests.swift; sourceTree = "<group>"; };
 		3D27FEFE2A8F4F45005C8744 /* BytedeskDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytedeskDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3D27FF0C2A8F4F85005C8744 /* bytedesk-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "bytedesk-swift"; path = ../..; sourceTree = "<group>"; };
 		3D27FF0E2A8F5011005C8744 /* UserinfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserinfoView.swift; sourceTree = "<group>"; };
 		3D27FF0F2A8F5011005C8744 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		3D27FF102A8F5011005C8744 /* SupportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
@@ -60,6 +60,7 @@
 		3D27FF122A8F5011005C8744 /* SwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		3D27FF132A8F5011005C8744 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		3D27FF142A8F5011005C8744 /* H5View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H5View.swift; sourceTree = "<group>"; };
+		3D27FF1D2A8F52E4005C8744 /* bytedesk-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "bytedesk-swift"; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D27FF202A8F53C6005C8744 /* bytedesk-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +97,7 @@
 				3D27FEF12A8F4F45005C8744 /* BytedeskDemoTests */,
 				3D27FEFB2A8F4F45005C8744 /* BytedeskDemoUITests */,
 				3D27FEDE2A8F4F43005C8744 /* Products */,
+				3D27FF1E2A8F53C6005C8744 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,7 +152,7 @@
 		3D27FF0B2A8F4F85005C8744 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				3D27FF0C2A8F4F85005C8744 /* bytedesk-swift */,
+				3D27FF1D2A8F52E4005C8744 /* bytedesk-swift */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -168,6 +171,13 @@
 			path = ApiViews;
 			sourceTree = "<group>";
 		};
+		3D27FF1E2A8F53C6005C8744 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,6 +194,9 @@
 			dependencies = (
 			);
 			name = BytedeskDemo;
+			packageProductDependencies = (
+				3D27FF1F2A8F53C6005C8744 /* bytedesk-swift */,
+			);
 			productName = BytedeskDemo;
 			productReference = 3D27FEDD2A8F4F43005C8744 /* BytedeskDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -658,6 +671,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D27FF1F2A8F53C6005C8744 /* bytedesk-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "bytedesk-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D27FED52A8F4F43005C8744 /* Project object */;
 }
