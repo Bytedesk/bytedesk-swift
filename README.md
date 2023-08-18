@@ -1,4 +1,4 @@
-# 萝卜丝智能客服 - Swift版开源客服SDK
+# 萝卜丝智能客服 - Swift版100%开源客服SDK
 
 - [官网](https://www.weikefu.net/)
 - [价格](https://www.weikefu.net/pages/price.html)
