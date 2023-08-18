@@ -40,7 +40,9 @@
 
 ### 3. Swift Package Manager (SPM)
 
-- 源地址：<https://github.com/Bytedesk/bytedesk-swift>
+- 源地址1-gitee：<https://gitee.com/270580156/bytedesk-swift>
+- 源地址2-github：<https://github.com/Bytedesk/bytedesk-swift>
+- 国内用户建议使用源地址1
 
 #### 步骤1
 
