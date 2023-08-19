@@ -43,16 +43,26 @@
 - 源地址1-gitee：<https://gitee.com/270580156/bytedesk-swift>
 - 源地址2-github：<https://github.com/Bytedesk/bytedesk-swift>
 - 国内用户建议使用源地址1
+  
+```bash
+dependencies: [
+    .package(url: "https://gitee.com/270580156/bytedesk-swift", .upToNextMajor(from: "0.0.1"))
+]
+或
+dependencies: [
+    .package(url: "https://github.com/Bytedesk/bytedesk-swift", .upToNextMajor(from: "0.0.1"))
+]
+```
 
 #### 参考步骤
 
-- <img src="https://www.weikefu.net/assets/spm/add-package-1.png" width="250"> 
+<!-- - <img src="https://www.weikefu.net/assets/spm/add-package-1.png" width="250"> 
 - 此处输入源地址：<img src="https://www.weikefu.net/assets/spm/add-package-2.png" width="500">
 - 加载中：<img src="https://www.weikefu.net/assets/spm/add-package-3.png" width="500">
 - 点击Add Package：<img src="https://www.weikefu.net/assets/spm/add-package-4.png" width="500">
 - 此处查看，如图为添加成功：<img src="https://www.weikefu.net/assets/spm/add-package-5.png" width="500">
 - 如果没有bytedesk-swift，则需要手动添加：<img src="https://www.weikefu.net/assets/spm/add-package-6.png" width="500">
-- 添加成功之后，便可以在源文件中引用：<img src="https://www.weikefu.net/assets/spm/add-package-7.png" width="500">
+- 添加成功之后，便可以在源文件中引用：<img src="https://www.weikefu.net/assets/spm/add-package-7.png" width="500"> -->
 
 #### 如果加载失败，建议重置
 
