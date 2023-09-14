@@ -23,8 +23,8 @@
 
 ## 源码及Demo下载
 
-- [Gitee](https://gitee.com/270580156/bytedesk-oc)
-- [Github](https://github.com/Bytedesk/bytedesk-oc)
+- [Gitee](https://gitee.com/270580156/bytedesk-swift)
+- [Github](https://github.com/Bytedesk/bytedesk-swift)
 
 ## 集成方式
 
@@ -35,7 +35,7 @@
 此方法适用于有自定义界面需求的开发者
 
 - 下载源码，直接拖到自己项目中
-- 选择项目，选中项目TARGET，选中 General，在 framework 中添加 bytedesk_oc.framework
+- 选择项目，选中项目TARGET，选中 General，在 framework 中添加 bytedesk_swift.framework
 
 ### 2. Swift Package Manager (SPM)
 
