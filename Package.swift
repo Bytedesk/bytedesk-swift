@@ -17,13 +17,11 @@ let package = Package(
     ],
     dependencies: [
         // 添加完dependencies之后，到项目跟目录底下执行: swift build
-        // Dependencies declare other packages that this package depends on.
-//        .package(url: "https://github.com/hackiftekhar/IQKeyboardManager", from: "6.5.0") // 键盘
-        .package(url: "https://github.com/Alamofire/Alamofire", from: "5.7.1"),
-        .package(url: "https://github.com/onevcat/Kingfisher", .upToNextMajor(from: "7.0.0")),
-        .package(url: "https://github.com/emqx/CocoaMQTT", from: "2.1.6"),
-        .package(url: "https://github.com/stephencelis/SQLite.swift", from: "0.14.1"),
-        .package(url: "https://github.com/apple/swift-protobuf", from: "1.22.1")
+        .package(url: "https://gitee.com/270580156/Alamofire", from: "5.7.1"),
+        .package(url: "https://gitee.com/270580156/Kingfisher", .upToNextMajor(from: "7.0.0")),
+        .package(url: "https://gitee.com/270580156/CocoaMQTT", from: "2.1.6"),
+        .package(url: "https://gitee.com/270580156/SQLite.swift", from: "0.14.1"),
+        .package(url: "https://gitee.com/270580156/swift-protobuf", from: "1.22.1")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
