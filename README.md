@@ -47,18 +47,18 @@ public headers ("include") directory path for 'bytedesk-oc' is invalid or not co
   
 ```bash
 dependencies: [
-    .package(url: "https://gitee.com/270580156/bytedesk-swift", .upToNextMajor(from: "2.9.1"))
+    .package(url: "https://gitee.com/270580156/bytedesk-swift", .upToNextMajor(from: "2.9.2"))
 ]
 或
 dependencies: [
-    .package(url: "https://github.com/Bytedesk/bytedesk-swift", .upToNextMajor(from: "2.9.1"))
+    .package(url: "https://github.com/Bytedesk/bytedesk-swift", .upToNextMajor(from: "2.9.2"))
 ]
 ```
 
 ### 3. Carthage
 
 ```bash
-github 'bytedesk-swift/bytedesk-swift' ~> 2.9.1
+github 'bytedesk-swift/bytedesk-swift' ~> 2.9.2
 ```
 
 ### 预览
