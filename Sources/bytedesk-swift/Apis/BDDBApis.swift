@@ -31,6 +31,8 @@ public class BDDBApis {
     let statusColumn = Expression<String?>("status")
     let senderUidColumn = Expression<String?>("senderUid")
     //
+    let currentUidColumn = Expression<String?>("currentUid")
+    //
     init() {
         do {
             let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -73,6 +75,8 @@ public class BDDBApis {
             //
             table.column(statusColumn)
             table.column(senderUidColumn)
+            //
+            table.column(currentUidColumn)
         })
         //
         isTableCreated = true
@@ -81,6 +85,7 @@ public class BDDBApis {
     // 在message表中插入一条记录
     func insertMessage(_ messageModel: BDMessageModel) {
         // debugPrint("insertMessage \(messageModel.type!)")
+        messageModel.currentUid = BDSettings.getUid()
         // TODO: 消息回执和消息预知 没有id字段, 暂不处理此类型，后续处理
         // TODO: 对于访客端暂时忽略连接状态信息
         if messageModel.type == BD_MESSAGE_TYPE_NOTIFICATION_RECEIPT ||
@@ -107,7 +112,8 @@ public class BDDBApis {
                                     threadTopicColumn <- messageModel.thread?.topic,
                                     threadTypeColumn <- messageModel.thread?.type,
                                     statusColumn <- messageModel.status,
-                                    senderUidColumn <- messageModel.user?.uid)
+                                    senderUidColumn <- messageModel.user?.uid,
+                                    currentUidColumn <- messageModel.currentUid)
         do {
             try db!.run(insert)
         } catch {
@@ -132,6 +138,7 @@ public class BDDBApis {
                 let threadType = row[threadTypeColumn]
                 let status = row[statusColumn]
                 let senderUid = row[senderUidColumn]
+                let currentUid = row[currentUidColumn]
                 //
                 let message = BDMessageModel()
                 message.mid = mid
@@ -144,6 +151,7 @@ public class BDDBApis {
                 message.thread?.type = threadType
                 message.status = status
                 message.user?.uid = senderUid
+                message.currentUid = currentUid
                 messages.append(message)
             }
         } catch {
@@ -154,7 +162,7 @@ public class BDDBApis {
     
     //
     func queryMessagesByThreadTid(_ threadTid: String) -> [BDMessageModel] {
-        let query = messageTable.filter(threadTidColumn == threadTid)
+        let query = messageTable.filter(threadTidColumn == threadTid && currentUidColumn == BDSettings.getUid())
         //
         var messages: [BDMessageModel] = []
         do {
@@ -169,6 +177,7 @@ public class BDDBApis {
                 let threadType = row[threadTypeColumn]
                 let status = row[statusColumn]
                 let senderUid = row[senderUidColumn]
+                let currentUid = row[currentUidColumn]
                 //
                 let message = BDMessageModel()
                 message.mid = mid
@@ -181,6 +190,7 @@ public class BDDBApis {
                 message.thread?.type = threadType
                 message.status = status
                 message.user?.uid = senderUid
+                message.currentUid = currentUid
                 return message
             }
         } catch {
@@ -191,7 +201,7 @@ public class BDDBApis {
     
     //
     func queryMessagesByThreadTopic(_ threadTopic: String) -> [BDMessageModel] {
-        let query = messageTable.filter(threadTopicColumn == threadTopic)
+        let query = messageTable.filter(threadTopicColumn == threadTopic && currentUidColumn == BDSettings.getUid())
         //
         var messages: [BDMessageModel] = []
         do {
@@ -206,6 +216,7 @@ public class BDDBApis {
                 let threadType = row[threadTypeColumn]
                 let status = row[statusColumn]
                 let senderUid = row[senderUidColumn]
+                let currentUid = row[currentUidColumn]
                 //
                 let message = BDMessageModel()
                 message.mid = mid
@@ -218,6 +229,7 @@ public class BDDBApis {
                 message.thread?.type = threadType
                 message.status = status
                 message.user?.uid = senderUid
+                message.currentUid = currentUid
                 return message
             }
         } catch {

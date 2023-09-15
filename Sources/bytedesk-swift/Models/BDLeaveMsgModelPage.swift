@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BDLeaveMsgModelPage: Codable {
+public class BDLeaveMsgModelPage: Codable {
     
     var content: [BDLeaveMsgModel]?
 }

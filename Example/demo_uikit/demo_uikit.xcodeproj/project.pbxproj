@@ -62,7 +62,7 @@
 		3DC020AF2AA313F10012ACA0 /* demo_kefu_uikitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_kefu_uikitUITests.swift; sourceTree = "<group>"; };
 		3DC020B12AA313F10012ACA0 /* demo_kefu_uikitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_kefu_uikitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3DC020BE2AA314390012ACA0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3DD2D2732AB2EDAA00EC1397 /* bytedesk-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "bytedesk-swift"; path = ../..; sourceTree = "<group>"; };
+		3DE267B42AB44FD8004196DF /* bytedesk-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "bytedesk-swift"; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 		3DC020BF2AA3147E0012ACA0 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				3DD2D2732AB2EDAA00EC1397 /* bytedesk-swift */,
+				3DE267B42AB44FD8004196DF /* bytedesk-swift */,
 			);
 			name = Packages;
 			sourceTree = "<group>";

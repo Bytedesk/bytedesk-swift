@@ -37,7 +37,7 @@ let BD_PASSPORT_TOKEN_TYPE      = "bd_token_type"
 public class BDSettings: NSObject {
     
     /// get
-    static func isAlreadyLogin() -> Bool? {
+    static public func isAlreadyLogin() -> Bool? {
         let accessToken = UserDefaults.standard.string(forKey: BD_PASSPORT_ACCESS_TOKEN);
         return accessToken != nil && !accessToken!.isEmpty
     }
@@ -59,50 +59,58 @@ public class BDSettings: NSObject {
     }
     
     static func getUsername() -> String? {
-        return UserDefaults.standard.string(forKey: BD_USERNAME) ?? "";
+        return UserDefaults.standard.string(forKey: BD_USERNAME) ?? ""
+    }
+    
+    static func getPassword() -> String? {
+        return UserDefaults.standard.string(forKey: BD_PASSWORD) ?? ""
     }
     
     static func getNickname() -> String? {
-        return UserDefaults.standard.string(forKey: BD_NICKNAME) ?? "";
+        return UserDefaults.standard.string(forKey: BD_NICKNAME) ?? ""
     }
     
     static func getAvatar() -> String? {
-        return UserDefaults.standard.string(forKey: BD_AVATAR) ?? "";
+        return UserDefaults.standard.string(forKey: BD_AVATAR) ?? ""
     }
-    
+        
     /// set
-    static func setSubDomain(subDomain: String?) {
+    static func setSubDomain(_ subDomain: String?) {
         UserDefaults.standard.set(subDomain, forKey: BD_SUBDOMAIN)
     }
     
-    static func setAccessToken(accessToken: String?) {
+    static func setAccessToken(_ accessToken: String?) {
 //        // debugPrint("setAccessToken: \(accessToken!)")
         UserDefaults.standard.set(accessToken!, forKey: BD_PASSPORT_ACCESS_TOKEN)
     }
     
-    static func setUid(uid: String?) {
+    static func setUid(_ uid: String?) {
 //        // debugPrint("setUid: \(uid!)")
         UserDefaults.standard.set(uid!, forKey: BD_UID)
     }
     
-    static func setUsername(username: String?) {
+    static func setUsername(_ username: String?) {
 //        // debugPrint("setUsername: \(username!)")
         UserDefaults.standard.set(username!, forKey: BD_USERNAME)
     }
     
-    static func setNickname(nickname: String?) {
+    static func setPassword(_ password: String?) {
+        UserDefaults.standard.set(password, forKey: BD_PASSWORD)
+    }
+    
+    static func setNickname(_ nickname: String?) {
         UserDefaults.standard.set(nickname, forKey: BD_NICKNAME)
     }
     
-    static func setAvatar(avatar: String?) {
+    static func setAvatar(_ avatar: String?) {
         UserDefaults.standard.set(avatar, forKey: BD_AVATAR)
     }
     
-    static func setUserInfo(user: BDUserModel?) {
-        setUid(uid: user?.uid)
-        setUsername(username: user?.username)
-        setNickname(nickname: user?.nickname)
-        setAvatar(avatar: user?.avatar)
+    static func setUserInfo(_ user: BDUserModel?) {
+        setUid(user?.uid)
+        setUsername(user?.username)
+        setNickname(user?.nickname)
+        setAvatar(user?.avatar)
     }
     
     /// clear
@@ -110,8 +118,16 @@ public class BDSettings: NSObject {
         UserDefaults.standard.set("", forKey: BD_UID)
     }
     
+    static func clearAccessToken() {
+        UserDefaults.standard.set("", forKey: BD_PASSPORT_ACCESS_TOKEN)
+    }
+    
     static func clearUsername() {
         UserDefaults.standard.set("", forKey: BD_USERNAME)
+    }
+    
+    static func clearPassword() {
+        UserDefaults.standard.set("", forKey: BD_PASSWORD)
     }
     
     static func clearNickname() {
@@ -124,7 +140,9 @@ public class BDSettings: NSObject {
     
     static func clearUserInfo() {
         clearUid()
+        clearAccessToken()
         clearUsername()
+        clearPassword()
         clearNickname()
         clearAvatar()
     }

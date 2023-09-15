@@ -53,6 +53,7 @@ class BDChatKFViewController: UIViewController {
     func initWithWorkGroupWid(wid: String?, _ title: String?, _ isPush: Bool?) {
         self.mUUid = wid
         self.mTitle = title
+        self.mIsPush = isPush
         self.navigationItem.title = title
 //        self.mThreadModel = BDThread()
         self.mThreadType = BD_THREAD_TYPE_WORKGROUP
@@ -71,6 +72,7 @@ class BDChatKFViewController: UIViewController {
     func initWithAgentUid(uid: String?, _ title: String?, _ isPush: Bool?) {
         self.mUUid = uid
         self.mTitle = title
+        self.mIsPush = isPush
         self.navigationItem.title = title
 //        self.mThreadModel = BDThread()
         self.mThreadType = BD_THREAD_TYPE_APPOINTED
@@ -88,8 +90,43 @@ class BDChatKFViewController: UIViewController {
     //
     override func loadView() {
         super.loadView()
-        // debugPrint("\(#function)")
-        mTableView = UITableView(frame: CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)))
+        debugPrint("1.\(#function)")
+        //
+        mTableView = UITableView()
+    }
+    
+    //
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = mTitle;
+         debugPrint("2.\(#function)")
+        //
+        let singleFingerTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
+        self.mTableView?.addGestureRecognizer(singleFingerTap)
+        //
+        self.registerNotifications()
+        //
+        if (self.mIsPush == false) {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(handleCloseButtonEvent))
+        }
+        //
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis"),
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(handleRightBarButtonItemClicked(_:)))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("3.\(#function)")
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print("4.\(#function)")
+        // Initialize and layout subviews
+//        mTableView = UITableView(frame: CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)))
+        mTableView?.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))
         mTableView?.separatorColor = UIColor.clear
         mTableView?.backgroundColor = UIColor.systemGroupedBackground
         mTableView?.delegate = self
@@ -105,33 +142,20 @@ class BDChatKFViewController: UIViewController {
 //        mTableView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.view.addSubview(mTableView!);
         //
+//        let windowHeight = getWindowHeight()
         mInputView = BDInputView(frame: CGRectMake(0.0, self.view.frame.size.height - INPUTBAR_HEIGHT, self.view.frame.size.width, INPUTBAR_HEIGHT))
         mInputView?.delegate = self
         self.view.addSubview(mInputView!)
         //
+        initEmotionLazy()
+        initPlusViewLazy()
+        initRecordVoiceLazy()
+        initImagePickerLazy()
+        //
         self.mRefreshControl = UIRefreshControl(frame: CGRectMake(0, 0, 20, 20))
         self.mTableView?.addSubview(self.mRefreshControl!)
         self.mRefreshControl?.addTarget(self, action: #selector(handleRefreshControlPulldown), for: .valueChanged)
-        //
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis"),
-                                                                 style: .plain,
-                                                                 target: self,
-                                                                 action: #selector(handleRightBarButtonItemClicked(_:)))
         
-    }
-    
-    //
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = mTitle;
-        // debugPrint("\(#function)")
-        //
-        let singleFingerTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
-        self.mTableView?.addGestureRecognizer(singleFingerTap)
-        //
-        self.registerNotifications()
-        self.mEmotionToTextDictionary = self.loadEmotionToTextDictionary()
-        //
     }
     
     //
@@ -251,6 +275,7 @@ class BDChatKFViewController: UIViewController {
             mEmotionView = BDEmotionView(frame: CGRectMake(0.0, self.view.frame.size.height, self.view.frame.size.width, EMOTION_PLUS_VIEW_HEIGHT))
             mEmotionView?.delegate = self
             self.view.addSubview(mEmotionView!)
+            self.mEmotionToTextDictionary = self.loadEmotionToTextDictionary()
         }
     }
     
@@ -278,6 +303,10 @@ class BDChatKFViewController: UIViewController {
             self.mImagePickerController = UIImagePickerController()
             self.mImagePickerController?.delegate = self
         }
+    }
+    
+    @objc func handleCloseButtonEvent() {
+        self.navigationController?.dismiss(animated: true)
     }
     
 }

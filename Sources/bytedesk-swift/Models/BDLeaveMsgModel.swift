@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BDLeaveMsgModel: Codable {
+public class BDLeaveMsgModel: Codable {
     
     var lid: String? // 唯一lid
     var avatar: String? // 留言人头像

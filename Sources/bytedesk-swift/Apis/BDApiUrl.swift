@@ -14,6 +14,8 @@ struct BDApiUrl {
 //    static let hostName = "http://localhost:8000"
     // 注册访客
     static let registerAnonymousURL = BD_REST_API_HOST + "visitor/api/username"
+    //
+    static let registerUserURL = BD_REST_API_HOST + "visitor/api/register/user"
     // 登录
     static let loginPasswordURL = BD_REST_API_HOST + "oauth/token"
     // 请求会话
@@ -65,5 +67,9 @@ struct BDApiUrl {
     //
     static let rateURL = BD_REST_API_HOST + "api/rate/do"
     
+    //
+    static let createFeedbackUrl = BD_REST_API_HOST + "api/feedback/create"
+    
+    static let queryFeedbackUrl = BD_REST_API_HOST + "api/feedback/mine"
     
 }

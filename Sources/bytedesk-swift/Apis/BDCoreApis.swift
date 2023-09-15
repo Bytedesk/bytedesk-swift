@@ -11,7 +11,7 @@ import Foundation
 public class BDCoreApis: NSObject {
     
     // SDK初始化
-    static public func initBytedesk(appkey: String?, subDomain: String?) {
+    static public func initBytedesk(appkey: String?, subDomain: String?, onSuccess:@escaping ((_ loginResult: BDPassport)->()), onFailure:@escaping ((_ error: String)->())) {
         // TODO: 未处理token过期的情况
 //        if (BDSettings.isAlreadyLogin()!) {
 //            // debugPrint("isAlreadyLogin")
@@ -19,7 +19,7 @@ public class BDCoreApis: NSObject {
 //        }
         //
         let username = BDSettings.getUsername()!;
-        if (username.isEmpty) {
+        if (username.isEmpty || username.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0) {
             // 注册
             BDHttpApis.registerAnonymous(appkey: appkey, subDomain: subDomain) { registerResult in
                 // 登录
@@ -28,11 +28,13 @@ public class BDCoreApis: NSObject {
                     BDCoreApis.connect();
                     // 上传设备信息
     //                [[BDHttpApis sharedInstance] uploadDeviceInfo]
+                    //
+                    onSuccess(loginResult)
                 } onFailure: { error in
-                    
+                    onFailure(error)
                 }
             } onFailure: { error in
-                
+                onFailure(error)
             }
         } else {
             // debugPrint("username: \(String(describing: username))")
@@ -42,12 +44,50 @@ public class BDCoreApis: NSObject {
                 BDCoreApis.connect()
                 // // 上传设备信息
 //                [[BDHttpApis sharedInstance] uploadDeviceInfo]
-                
+                //
+                onSuccess(registerResult)
             } onFailure: { error in
-                
+                onFailure(error)
             }
         }
     }
+    
+    //
+    static public func initBytedesk(username: String?, nickname: String?, avatar: String?, appkey: String?, subDomain: String?, onSuccess:@escaping ((_ loginResult: BDPassport)->()), onFailure:@escaping ((_ error: String)->())) {
+        //
+        let usernameLocal = BDSettings.getUsername()!
+        if (!usernameLocal.isEmpty && usernameLocal.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count > 0) {
+            let passwordLocal = BDSettings.getPassword()!
+            debugPrint("usernameLocal:\(usernameLocal), passwordLocal:\(passwordLocal)")
+            // 登录
+            BDHttpApis.loginUser(username: usernameLocal, password: passwordLocal, appkey: appkey, subDomain: subDomain) { loginResult in
+                // 建立长链接
+                BDCoreApis.connect();
+                // 回调
+                onSuccess(loginResult)
+            } onFailure: { error in
+                onFailure(error)
+            }
+        } else {
+            // 注册
+            let password = username
+            BDHttpApis.registerUser(username: username, nickname: nickname, avatar: avatar, password: password, subDomain: subDomain) { registerResult in
+                // 登录
+                let usernameCompose = String(format: "%@@%@", username!, subDomain!)
+                BDHttpApis.loginUser(username: usernameCompose, password: password, appkey: appkey, subDomain: subDomain) { loginResult in
+                    // 建立长链接
+                    BDCoreApis.connect();
+                    // 回调
+                    onSuccess(loginResult)
+                } onFailure: { error in
+                    onFailure(error)
+                }
+            } onFailure: { error in
+                onFailure(error)
+            }
+        }
+    }
+
     
     // 建立长链接
     static public func connect() {
@@ -255,9 +295,9 @@ public class BDCoreApis: NSObject {
     }
     
     //
-    static func leaveMessage(type: String?, uid: String?, mobile: String?, content: String?, imageUrl: String?, onSuccess:@escaping ((_ leaveMsgResult: BDLeaveMsgResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
+    static func createLeaveMessage(type: String?, uid: String?, mobile: String?, content: String?, imageUrl: String?, onSuccess:@escaping ((_ leaveMsgResult: BDLeaveMsgResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
         
-        BDHttpApis.leaveMessage(type: type, uid: uid, mobile: mobile, content: content, imageUrl: imageUrl) { leaveMsgResult in
+        BDHttpApis.createLeaveMessage(type: type, uid: uid, mobile: mobile, content: content, imageUrl: imageUrl) { leaveMsgResult in
             onSuccess(leaveMsgResult)
         } onFailure: { error in
             onFailure(error)
@@ -273,6 +313,24 @@ public class BDCoreApis: NSObject {
         }
     }
     
+    static func createFeedback(adminUid: String?, categoryCid: String?, mobile: String?, content: String?, imageUrl: String?, onSuccess:@escaping ((_ feedbackResult: BDFeedbackResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
+        //
+        BDHttpApis.createFeedback(adminUid: adminUid, categoryCid: categoryCid, mobile: mobile, content: content, imageUrl: imageUrl) { feedbackResult in
+            onSuccess(feedbackResult)
+        } onFailure: { error in
+            onFailure(error)
+        }
+    }
+    
+    static func queryFeedback(page: Int?, size: Int?, onSuccess:@escaping ((_ feedbackResultPage: BDFeedbackResultPage)->()), onFailure:@escaping ((_ error: String)->())) {
+        //
+        BDHttpApis.queryFeedback(page: page, size: size) { feedbackResultPage in
+            onSuccess(feedbackResultPage)
+        } onFailure: { error in
+            onFailure(error)
+        }
+    }
+    
     //
     static func rate(tid: String?, score: Int?, note: String?, invite: Bool?, onSuccess:@escaping ((_ rateResult: BDRateResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
         
@@ -282,6 +340,8 @@ public class BDCoreApis: NSObject {
             onFailure(error)
         }
     }
+    
+    
     
     /// 清空记录
     static func clearMessages() {
@@ -303,6 +363,24 @@ public class BDCoreApis: NSObject {
     static func deleteMessageByMid(_ mid: String) {
         
         BDDBApis.sharedInstance().deleteMessageByMid(mid)
+    }
+    
+    
+    static public func logout(onSuccess:@escaping ((_ statusResult: BDStatusResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
+        
+        BDHttpApis.logout { statusResult in
+            // 断开长链接
+            disconnect()
+            // 回调
+            onSuccess(statusResult)
+        } onFailure: { error in
+            onFailure(error)
+        }
+    }
+    
+    static public func disconnect() {
+        
+        BDMQTTApis.sharedInstance().disconnect()
     }
     
 }

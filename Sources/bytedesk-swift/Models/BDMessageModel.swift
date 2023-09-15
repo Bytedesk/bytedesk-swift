@@ -34,6 +34,8 @@ public class BDMessageModel: Codable, Identifiable, ObservableObject {
     var thread: BDThreadModel?
     var user: BDUserModel?
     //
+    var currentUid: String? = ""
+    //
     var contentAttr: NSAttributedString?
     // ...
     func isNotification() -> Bool {
@@ -114,6 +116,7 @@ public class BDMessageModel: Codable, Identifiable, ObservableObject {
         case answers
         case thread
         case user
+        case currentUid
     }
     
 //    public required init(from decoder: Decoder) throws {

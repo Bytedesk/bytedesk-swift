@@ -49,9 +49,7 @@ class BDRateViewController: UIViewController {
             }
         }
         
-        if self.mIsPush {
-            // Do something when pushed
-        } else {
+        if !self.mIsPush {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(handleCloseButtonEvent))
         }
         self.forceEnableBackGesture = true
@@ -67,7 +65,11 @@ class BDRateViewController: UIViewController {
         print("4.\(#function)")
         // Initialize and layout subviews
         initRateRobotView()
+        //
+        debugPrint("height：\(self.view.frame.size.height)")
     }
+    
+
     
     // 初始化评价机器人界面
     func initRateRobotView() {
@@ -262,10 +264,7 @@ class BDRateViewController: UIViewController {
         } onFailure: { error in
             BDToast.show(message: error)
         }
-
     }
-
-    
 
     @objc func handleCloseButtonEvent() {
         self.navigationController?.dismiss(animated: true)

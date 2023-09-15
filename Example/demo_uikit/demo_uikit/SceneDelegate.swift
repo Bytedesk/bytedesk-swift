@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import bytedesk_swift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,10 +23,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.rootViewController = navRoot
         self.window?.backgroundColor = UIColor.white
         
+        // 萝卜丝：注册截屏通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userDidTakeScreenshot), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
+        
         // 用于调试，测试主题颜色
 //        self.window?.overrideUserInterfaceStyle = UIUserInterfaceStyle.dark
 //        self.window?.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
 //        self.window.overrideUserInterfaceStyle = UITraitCollection.currentTraitCollection.userInterfaceStyle; // 跟随系统的dark Mode
+    }
+    
+    let kDefaultWorkGroupWid = "201807171659201"
+    @objc func userDidTakeScreenshot() {
+        // TODO: 调用萝卜丝截屏接口，开发中
+        print("检测到截屏显示 联系客服、意见反馈、分享截图，注：模拟器不支持，仅支持真机")
+        
+        BDUIApis.sharedInstance().showScreenshot(window: self.window!,
+                                backgroundColor: UIColor.black,
+                                workGroupWid: kDefaultWorkGroupWid,
+                                showKefu: true,
+                                showFeedback: true,
+                                showShare: true) {
+            
+        } feedbackCallback: {
+            
+        } shareCallback: {
+            
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

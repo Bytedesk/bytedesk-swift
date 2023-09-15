@@ -7,10 +7,10 @@
 
 import UIKit
 
-class BDLeaveHistoryViewController: UITableViewController {
+class BDFeedbackHistoryViewController: UITableViewController {
     
     var mRefreshControl: UIRefreshControl?
-    var mLeaveArray: [BDLeaveMsgModel]?
+    var mFeedbackArray: [BDFeedbackModel]?
 
     var page: Int = 0
     var size: Int = 0
@@ -23,56 +23,55 @@ class BDLeaveHistoryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.title = "我的留言"
+        
+        self.title = "我的反馈"
         self.page = 0
         self.size = 20
         
-        self.mLeaveArray = []
+        self.mFeedbackArray = []
         
-        self.mRefreshControl = UIRefreshControl()
+        self.mRefreshControl = UIRefreshControl(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         tableView.addSubview(self.mRefreshControl!)
         self.mRefreshControl!.addTarget(self, action: #selector(refreshControlSelector), for: .valueChanged)
         
         self.mRefreshControl!.beginRefreshing()
-        getLeaveRecords()
+        self.getFeedbackRecords()
     }
 
-    // UITableViewDataSource, UITableViewDelegate methods
+    // MARK: - UITableViewDataSource, UITableViewDelegate
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if mLeaveArray!.count == 0 {
-            // 内容为空
+        if self.mFeedbackArray!.count == 0 {
             return 1
         }
-        return mLeaveArray!.count
+        return self.mFeedbackArray!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         
-        // Configure the cell...
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
             cell?.accessoryType = .none
         }
         
-        if mLeaveArray!.count == 0 {
-            cell?.detailTextLabel?.text = "暂未留言"
+        if self.mFeedbackArray!.count == 0 {
+            cell?.detailTextLabel?.text = "暂未反馈"
             return cell!
         }
         
-        let leaveModel = mLeaveArray![indexPath.row]
-        cell?.textLabel?.text = leaveModel.content
-        if let reply = leaveModel.reply {
-            cell?.detailTextLabel?.text = reply
-        } else {
+        let feedbackModel = self.mFeedbackArray![indexPath.row]
+        cell?.textLabel?.text = feedbackModel.content
+        
+        if let replyContent = feedbackModel.replyContent {
             cell?.detailTextLabel?.text = "暂未回复"
+        } else {
+            cell?.detailTextLabel?.text = feedbackModel.replyContent
         }
         
         return cell!
@@ -81,32 +80,28 @@ class BDLeaveHistoryViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        // BDLeaveModel *feedbackModel = [self.mLeaveArray objectAtIndex:indexPath.row];
+        // let feedbackModel = self.mFeedbackArray[indexPath.row] as! BDFeedbackModel
+        //
     }
-
-    // Other methods
 
     @objc func refreshControlSelector() {
         print(#function)
         
-        getLeaveRecords()
+        getFeedbackRecords()
     }
-    
-    @objc func getLeaveRecords() {
-        print(#function)
+
+    func getFeedbackRecords() {
         
-        BDCoreApis.queryLeaveMessage(page: 0, size: 20) { leaveMsgResultPage in
-            
-            self.mLeaveArray = leaveMsgResultPage.data?.content
+        BDCoreApis.queryFeedback(page: page, size: size) { feedbackResultPage in
+            self.mFeedbackArray = feedbackResultPage.data?.content
             self.tableView.reloadData()
             
-            BDToast.show(message: leaveMsgResultPage.message!)
+            BDToast.show(message: feedbackResultPage.message!)
             self.mRefreshControl?.endRefreshing()
         } onFailure: { error in
             self.mRefreshControl?.endRefreshing()
+            BDToast.show(message: error)
         }
-
-
-        
     }
+    
 }

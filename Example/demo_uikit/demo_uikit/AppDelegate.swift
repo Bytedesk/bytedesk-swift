@@ -27,17 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //注：管理后台网址 https://www.weikefu.net/admin/
     func initBytedesk() {
         // 初始化
-        BDCoreApis.initBytedesk(appkey: "a3f79509-5cb6-4185-8df9-b1ce13d3c655", subDomain: "vip")
-        // 注册截屏通知
-        NotificationCenter.default.addObserver(self, selector: #selector(userDidTakeScreenshot), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
+        BDCoreApis.initBytedesk(appkey: "a3f79509-5cb6-4185-8df9-b1ce13d3c655", subDomain: "vip") { loginResult in
+            print("萝卜丝：初始化成功")
+        } onFailure: { error in
+            print("萝卜丝：初始化失败: \(error)")
+        }
     }
     
-    // TODO: 调用萝卜丝截屏接口
-    @objc func userDidTakeScreenshot() {
-        print("userDidTakeScreenshot")
-        
-        
-    }
+    
 
     // MARK: UISceneSession Lifecycle
 

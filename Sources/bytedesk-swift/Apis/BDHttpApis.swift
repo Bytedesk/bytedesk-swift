@@ -19,8 +19,17 @@ public class BDHttpApis: NSObject {
     
     static func registerAnonymous(appkey: String?, subDomain: String?, onSuccess:@escaping ((_ registerResult: BDUserResult)->()), onFailure:@escaping ((_ error: String)->())) {
         // debugPrint("http \(#function)")
-        //
         BDHTTPManager.sharedInstance().registerAnonymous(appkey: appkey, subDomain: subDomain) { registerResult in
+            onSuccess(registerResult)
+        } failure: { error in
+            onFailure(error)
+        }
+    }
+    
+    // 自定义用户名
+    static func registerUser(username: String?, nickname: String?, avatar: String?, password: String?, subDomain: String?, onSuccess:@escaping ((_ registerResult: BDUserResult)->()), onFailure:@escaping ((_ error: String)->()) ) {
+        //
+        BDHTTPManager.sharedInstance().registerUser(username: username, nickname: nickname, avatar: avatar, password: password, subDomain: subDomain) { registerResult in
             onSuccess(registerResult)
         } failure: { error in
             onFailure(error)
@@ -29,11 +38,17 @@ public class BDHttpApis: NSObject {
     
     static func loginAnonymous(appkey: String?, subDomain: String?, onSuccess:@escaping ((_ loginResult: BDPassport)->()), onFailure:@escaping ((_ error: String)->())) {
         // debugPrint("http \(#function)")
+        BDHTTPManager.sharedInstance().loginAnonymous(appkey: appkey, subDomain: subDomain) { loginResult in
+            onSuccess(loginResult)
+        } failure: { error in
+            onFailure(error)
+        }
+    }
+    
+    //
+    static func loginUser(username: String?, password: String?, appkey: String?, subDomain: String?, onSuccess:@escaping ((_ loginResult: BDPassport)->()), onFailure:@escaping ((_ error: String)->())) {
         //
-        let username = BDSettings.getUsername();
-        let password = username;
-        //
-        BDHTTPManager.sharedInstance().login(username: username, password: password, appkey: appkey, subDomain: subDomain) { loginResult in
+        BDHTTPManager.sharedInstance().loginUser(username: username, password: password, appkey: appkey, subDomain: subDomain) { loginResult in
             onSuccess(loginResult)
         } failure: { error in
             onFailure(error)
@@ -207,9 +222,9 @@ public class BDHttpApis: NSObject {
         }
     }
     
-    static func leaveMessage(type: String?, uid: String?, mobile: String?, content: String?, imageUrl: String?, onSuccess:@escaping ((_ leaveMsgResult: BDLeaveMsgResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
+    static func createLeaveMessage(type: String?, uid: String?, mobile: String?, content: String?, imageUrl: String?, onSuccess:@escaping ((_ leaveMsgResult: BDLeaveMsgResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
         //
-        BDHTTPManager.sharedInstance().leaveMessage(type: type, uid: uid, mobile: mobile, content: content, imageUrl: imageUrl) { leaveMsgResult in
+        BDHTTPManager.sharedInstance().createLeaveMessage(type: type, uid: uid, mobile: mobile, content: content, imageUrl: imageUrl) { leaveMsgResult in
             onSuccess(leaveMsgResult)
         } failure: { error in
             onFailure(error)
@@ -225,6 +240,25 @@ public class BDHttpApis: NSObject {
         }
     }
     
+    static func createFeedback(adminUid: String?, categoryCid: String?, mobile: String?, content: String?, imageUrl: String?, onSuccess:@escaping ((_ feedbackResult: BDFeedbackResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
+        //
+        BDHTTPManager.sharedInstance().createFeedback(adminUid: adminUid, categoryCid: categoryCid, mobile: mobile, content: content, imageUrl: imageUrl) { feedbackResult in
+            onSuccess(feedbackResult)
+        } failure: { error in
+            onFailure(error)
+        }
+
+    }
+    
+    static func queryFeedback(page: Int?, size: Int?, onSuccess:@escaping ((_ feedbackResultPage: BDFeedbackResultPage)->()), onFailure:@escaping ((_ error: String)->())) {
+        //
+        BDHTTPManager.sharedInstance().queryFeedback(page: page, size: size) { feedbackResultPage in
+            onSuccess(feedbackResultPage)
+        } failure: { error in
+            onFailure(error)
+        }
+    }
+    
     //
     static func rate(tid: String?, score: Int?, note: String?, invite: Bool?, onSuccess:@escaping ((_ rateResult: BDRateResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
         //
@@ -235,8 +269,14 @@ public class BDHttpApis: NSObject {
         }
     }
     
-    static func logout() {
-        
+    static func logout(onSuccess:@escaping ((_ statusResult: BDStatusResult)->()), onFailure:@escaping ((_ error: String)->())  ) {
+        //
+        BDHTTPManager.sharedInstance().logout { statusResult in
+            //
+            onSuccess(statusResult)
+        } failure: { error in
+            onFailure(error)
+        }
     }
     
     

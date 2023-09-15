@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import bytedesk_swift
 
 //
 class KFApiTableViewController: UITableViewController {
@@ -15,12 +16,15 @@ class KFApiTableViewController: UITableViewController {
         "联系客服",
         "用户信息",
         "在线状态",
-//        "意见反馈",
+        "意见反馈",
 //        "帮助中心",
         "网页会话",
-//        "切换用户",
+        "切换用户",
 //        "监听截图"
     ];
+    //
+    var kDefaultAdminUid = "201808221551193"
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,40 +82,71 @@ class KFApiTableViewController: UITableViewController {
         } else if (indexPath.row == 2) {
             // 在线状态
             viewController = KFStatusViewController()
-        } else {
+        } else if (indexPath.row == 3) {
+            // 意见反馈
+            if (self.count % 2 == 0) {
+                BDUIApis.pushFeedback(navController: self.navigationController!, adminUid: kDefaultAdminUid, title: "意见反馈")
+            } else {
+                BDUIApis.presentFeedback(navController: self.navigationController!, adminUid: kDefaultAdminUid, title: "意见反馈")
+            }
+            self.count += 1
+            return
+        } else if (indexPath.row == 4) {
             // 网页形式接入
             // 注意: 登录后台->客服->技能组/账号->获取代码 获取相应URL
             let url = "https://chat.kefux.com/chat/h5/index.html?sub=vip&uid=201808221551193&wid=201807171659201&type=workGroup&aid=&ph=ph"
-            if let url = URL(string: url) {
-                let config = SFSafariViewController.Configuration()
-                config.entersReaderIfAvailable = true
-                let vc = SFSafariViewController(url: url, configuration: config)
-                present(vc, animated: true)
+//            BDUIApis.pushWebView(navController: self.navigationController!, chatUrl: url, title: "h5客服")
+            if (self.count % 2 == 0) {
+                BDUIApis.pushWebView(navController: self.navigationController!, chatUrl: url, title: "h5客服")
+            } else {
+                BDUIApis.presentWebView(navController: self.navigationController!, chatUrl: url, title: "h5客服")
             }
+            self.count += 1
+//            if let url = URL(string: url) {
+//                let config = SFSafariViewController.Configuration()
+//                config.entersReaderIfAvailable = true
+//                let vc = SFSafariViewController(url: url, configuration: config)
+//                present(vc, animated: true)
+//            }
             return
         }
-//        else if (indexPath.row == 3) {
-//            // TODO: 意见反馈
-//            self.showToast(message: "TODO: 意见反馈", font: .systemFont(ofSize: 12.0))
-//            return
-//        } else if (indexPath.row == 4) {
+//        else if (indexPath.row == 4) {
 //            // TODO: 帮助中心
 ////            viewController = KFSupportViewController()
 //            self.showToast(message: "TODO: 帮助中心", font: .systemFont(ofSize: 12.0))
 //            return
-//        } else if (indexPath.row == 5) {
-//            // TODO: 网页会话
-//            self.showToast(message: "TODO: 网页会话", font: .systemFont(ofSize: 12.0))
-//            return
-//        } else if (indexPath.row == 6) {
-//            // 切换用户
-//            viewController = KFSwitchViewController()
-//        } else if (indexPath.row == 7) {
-//            // TODO: 监听截图
-//            self.showToast(message: "TODO: 监听截图", font: .systemFont(ofSize: 12.0))
-//            return
 //        }
+        else if (indexPath.row == 5) {
+            // 切换用户
+            viewController = KFSwitchViewController()
+        } else if (indexPath.row == 6) {
+            // 监听截图
+            userDidTakeScreenshot()
+            return
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    let kDefaultWorkGroupWid = "201807171659201"
+    func userDidTakeScreenshot() {
+        // TODO: 调用萝卜丝截屏接口，开发中
+        print("TODO: 检测到截屏显示 联系客服、意见反馈、分享截图，注：模拟器不支持，仅支持真机")
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let lastWindow = windowScene.windows.last {
+            // 使用 lastWindow 进行相应操作
+            BDUIApis.sharedInstance().showScreenshot(window: lastWindow,
+                                    backgroundColor: UIColor.black,
+                                    workGroupWid: kDefaultWorkGroupWid,
+                                    showKefu: true,
+                                    showFeedback: true,
+                                    showShare: true) {
+                
+            } feedbackCallback: {
+
+            } shareCallback: {
+
+            }
+        }
     }
 
 }
