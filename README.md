@@ -83,6 +83,7 @@ github 'bytedesk-swift/bytedesk-swift' ~> 2.9.2
 
 ## 技术支持
 
+- 创始于2013年
 - QQ-3群: 825257535
 - 公众号：
 - <img src="https://www.weikefu.net/assets/img/luobosi_mp.png" width="250">
