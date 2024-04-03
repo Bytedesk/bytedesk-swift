@@ -3,7 +3,7 @@
     {
       "identity" : "alamofire",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/Alamofire",
+      "location" : "https://gitee.com/270580156/Alamofire",
       "state" : {
         "revision" : "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
         "version" : "5.8.0"
@@ -12,7 +12,7 @@
     {
       "identity" : "cocoamqtt",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/emqx/CocoaMQTT",
+      "location" : "https://gitee.com/270580156/CocoaMQTT",
       "state" : {
         "revision" : "990303d3549d4284fadd6c83ff8480e6ab0b4d42",
         "version" : "2.1.6"
@@ -21,7 +21,7 @@
     {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/onevcat/Kingfisher",
+      "location" : "https://gitee.com/270580156/Kingfisher",
       "state" : {
         "revision" : "b6f62758f21a8c03cd64f4009c037cfa580a256e",
         "version" : "7.9.1"
@@ -39,7 +39,7 @@
     {
       "identity" : "sqlite.swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stephencelis/SQLite.swift",
+      "location" : "https://gitee.com/270580156/SQLite.swift",
       "state" : {
         "revision" : "7a2e3cd27de56f6d396e84f63beefd0267b55ccb",
         "version" : "0.14.1"
@@ -57,7 +57,7 @@
     {
       "identity" : "swift-protobuf",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-protobuf",
+      "location" : "https://gitee.com/270580156/swift-protobuf",
       "state" : {
         "revision" : "cf62cdaea48b77f1a631e5cb3aeda6047c2cba1d",
         "version" : "1.23.0"
