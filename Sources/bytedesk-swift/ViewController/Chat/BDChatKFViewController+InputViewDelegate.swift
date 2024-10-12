@@ -273,7 +273,7 @@ extension BDChatKFViewController: BDInputViewDelegate {
     }
     
     func sendMessage(_ content: String) {
-        // debugPrint("kfvc \(#function), \(content)")
+         debugPrint("kfvc \(#function), \(content)")
         
         if (!content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) {
             // debugPrint("TODO: send \(content)")
@@ -290,7 +290,7 @@ extension BDChatKFViewController: BDInputViewDelegate {
         // 显示录音HUD
         self.mRecordVoiceViewHUD!.isHidden = false
         // 开始录音
-        self.mRecordVoiceViewHUD!.startVoiceRecording(self.mUUid!)
+        self.mRecordVoiceViewHUD!.startVoiceRecording(self.mSid)
         self.mTableView!.reloadData()
         self.tableViewScrollToBottom(true)
     }

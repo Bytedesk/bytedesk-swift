@@ -1,14 +1,25 @@
-# 萝卜丝智能客服 - Swift版客服SDK [OC版](https://gitee.com/270580156/bytedesk-oc)
+<!--
+ * @Author: jackning 270580156@qq.com
+ * @Date: 2023-09-05 16:33:36
+ * @LastEditors: jackning 270580156@qq.com
+ * @LastEditTime: 2024-10-10 23:14:08
+ * @Description: bytedesk.com https://github.com/Bytedesk/bytedesk
+ *   Please be aware of the BSL license restrictions before installing Bytedesk IM – 
+ *  selling, reselling, or hosting Bytedesk IM as a service is a breach of the terms and automatically terminates your rights under the license. 
+ *  仅支持企业内部员工自用，严禁私自用于销售、二次销售或者部署SaaS方式销售 
+ *  Business Source License 1.1: https://github.com/Bytedesk/bytedesk/blob/main/LICENSE 
+ *  contact: 270580156@qq.com 
+ *  联系：270580156@qq.com
+ * Copyright (c) 2024 by bytedesk.com, All Rights Reserved. 
+-->
+# 微语 Swift SDK
 
-- [官网](https://www.weikefu.net/)
-- [价格](https://www.weikefu.net/pages/price.html)
-- [管理后台](https://www.weikefu.net/admin)
-- [客服工作台](https://www.weikefu.net/chaty)
-- [客服端下载](https://www.weikefu.net/pages/download.html)
+- [官网](https://www.weiyuai.cn/)
+- [微语->请切换此分支](https://gitee.com/270580156/bytedesk-swift/tree/luobosi/)
 
 ## 部分功能
 
-- 萝卜丝官方技术支持
+- 微语官方技术支持
 - 全部基于Swift开发，100%全部开源，支持自定义界面
 - 支持人工客服
 - 支持机器人
@@ -47,27 +58,27 @@ public headers ("include") directory path for 'bytedesk-oc' is invalid or not co
   
 ```bash
 dependencies: [
-    .package(url: "https://gitee.com/270580156/bytedesk-swift", .upToNextMajor(from: "2.9.2"))
+    .package(url: "https://gitee.com/270580156/bytedesk-swift", .upToNextMajor(from: "3.0.0"))
 ]
 或
 dependencies: [
-    .package(url: "https://github.com/Bytedesk/bytedesk-swift", .upToNextMajor(from: "2.9.2"))
+    .package(url: "https://github.com/Bytedesk/bytedesk-swift", .upToNextMajor(from: "3.0.0"))
 ]
 ```
 
 ### 3. Carthage
 
 ```bash
-github 'bytedesk-swift/bytedesk-swift' ~> 2.9.2
+github 'bytedesk-swift/bytedesk-swift' ~> 3.0.0
 ```
 
 ### 预览
 
 |                      image1                      |                       image2                       |                        image3                        |
 | :----------------------------------------------: | :------------------------------------------------: | :--------------------------------------------------: |
-| <img src="https://www.weikefu.net/assets/screen/ios_1.jpg" width="250"> | <img src="https://www.weikefu.net/assets/screen/ios_2.jpg" width="250">  |  <img src="https://www.weikefu.net/assets/screen/ios_3.jpg" width="250">  |
-| <img src="https://www.weikefu.net/assets/screen/ios_4.jpg" width="250">  | <img src="https://www.weikefu.net/assets/screen/ios_5.jpg" width="250"> | <img src="https://www.weikefu.net/assets/screen/ios_6.jpg" width="250"> |
-| <img src="https://www.weikefu.net/assets/screen/ios_7.jpg" width="250">  | <img src="https://www.weikefu.net/assets/screen/ios_8.jpg" width="250"> | <img src="https://www.weikefu.net/assets/screen/ios_9.jpg" width="250"> |
+| <img src="./images/ios_1.jpg" width="250"> | <img src="./images/ios_2.jpg" width="250">  |  <img src="./images/ios_3.jpg" width="250">  |
+| <img src="./images/ios_4.jpg" width="250">  | <img src="./images/ios_5.jpg" width="250"> | <img src="./images/ios_6.jpg" width="250"> |
+| <img src="./images/ios_7.jpg" width="250">  | <img src="./images/ios_8.jpg" width="250"> | <img src="./images/ios_9.jpg" width="250"> |
 
 <!-- ### 参考步骤 -->
 
@@ -81,19 +92,38 @@ github 'bytedesk-swift/bytedesk-swift' ~> 2.9.2
 <!-- #### 如果加载失败，建议重置 -->
 <!-- - <img src="https://www.weikefu.net/assets/spm/add-package-8.png" width="500"> -->
 
-## 技术支持
+## 对话SDK
 
-- 创始于2013年
-- QQ-3群: 825257535
-- 公众号：
-- <img src="https://www.weikefu.net/assets/img/luobosi_mp.png" width="250">
+<!-- - [iOS-oc](https://github.com/Bytedesk/bytedesk-oc) -->
+<!-- - [React-native](https://github.com/bytedesk/bytedesk-react-native) -->
+<!-- - [Vue](https://github.com/bytedesk/bytedesk-vue) -->
+<!-- - [Browser-Extension](https://github.com/Bytedesk/bytedesk-browser-extention) -->
+<!-- - [Vscode-plugin](https://github.com/bytedesk/bytedesk-vscode-plugin) -->
+- [iOS-swift](https://github.com/Bytedesk/bytedesk-swift)
+- [Android](https://github.com/bytedesk/bytedesk-android)
+- [Flutter](https://github.com/bytedesk/bytedesk-flutter)
+- [React](https://github.com/bytedesk/bytedesk-react)
+- [UniApp](https://github.com/bytedesk/bytedesk-uniapp)
+- [Web](https://github.com/bytedesk/bytedesk-web)
 
-## 其他
+## 客户端
 
-- [UniApp SDK](https://github.com/bytedesk/bytedesk-uniapp)
-- [iOS SDK](https://github.com/bytedesk/bytedesk-ios)
-- [Android SDK](https://github.com/bytedesk/bytedesk-android)
-- [Web 端接口](https://github.com/bytedesk/bytedesk-web)
-- [微信公众号/小程序接口](https://github.com/bytedesk/bytedesk-wechat)
-- [服务器端接口](https://github.com/bytedesk/bytedesk-server)
-- [机器人](https://github.com/bytedesk/bytedesk-chatbot)
+- [Windows](https://www.weiyuai.cn/download.html)
+- [Mac](https://www.weiyuai.cn/download.html)
+- [Linux](https://www.weiyuai.cn/download.html)
+- [Android](https://www.weiyuai.cn/download.html)
+- [IOS](https://www.weiyuai.cn/download.html)
+
+## 技术栈
+
+<!-- - [sofaboot](https://github.com/sofastack/sofa-boot/blob/master/README_ZH.md) for im server 基于金融级云原生架构-->
+- [springboot-3.x for 后端](https://github.com/Bytedesk/bytedesk)
+- [python for ai](https://github.com/Bytedesk/bytedesk-ai)
+- [react for web前端](https://github.com/Bytedesk/bytedesk-react)
+- [flutter for 移动客户端(ios&android)](https://github.com/Bytedesk/bytedesk-mobile)
+- [electron for 桌面客户端(windows&mac&linux)](https://github.com/Bytedesk/bytedesk-desktop)
+
+## 联系
+
+- [Email](mailto:270580156@qq.com)
+- [微信](./images/wechat.png)

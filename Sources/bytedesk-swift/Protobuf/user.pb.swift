@@ -7,6 +7,9 @@
 // For information on using the generated types, please see the documentation:
 //   https://github.com/apple/swift-protobuf/
 
+/// prevent naming conflicts between different projects.
+/// package protobuf.proto;
+
 import Foundation
 import SwiftProtobuf
 
@@ -20,16 +23,13 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Bytedesk_User {
+struct User {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  ///uuID
+  /// uuID
   var uid: String = String()
-
-  /// 用户名
-  var username: String = String()
 
   /// 昵称
   var nickname: String = String()
@@ -37,13 +37,10 @@ struct Bytedesk_User {
   /// 头像
   var avatar: String = String()
 
-  /// 来源客户端
-  var client: String = String()
+  /// 类型
+  var type: String = String()
 
-  /// 企业号
-  var subDomain: String = String()
-
-  /// 扩展字段
+  /// 自定义扩展/附加信息
   var extra: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -51,38 +48,20 @@ struct Bytedesk_User {
   init() {}
 }
 
-/// 列表
-struct Bytedesk_UserList {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var list: [Bytedesk_User] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Bytedesk_User: @unchecked Sendable {}
-extension Bytedesk_UserList: @unchecked Sendable {}
+extension User: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Bytedesk"
-
-extension Bytedesk_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".User"
+extension User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "User"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "uid"),
-    2: .same(proto: "username"),
-    3: .same(proto: "nickname"),
-    4: .same(proto: "avatar"),
-    5: .same(proto: "client"),
-    6: .same(proto: "subDomain"),
-    7: .same(proto: "extra"),
+    2: .same(proto: "nickname"),
+    3: .same(proto: "avatar"),
+    4: .same(proto: "type"),
+    5: .same(proto: "extra"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -92,12 +71,10 @@ extension Bytedesk_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.uid) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.username) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.nickname) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.avatar) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.client) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.subDomain) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.extra) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.nickname) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.avatar) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.type) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.extra) }()
       default: break
       }
     }
@@ -107,67 +84,27 @@ extension Bytedesk_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if !self.uid.isEmpty {
       try visitor.visitSingularStringField(value: self.uid, fieldNumber: 1)
     }
-    if !self.username.isEmpty {
-      try visitor.visitSingularStringField(value: self.username, fieldNumber: 2)
-    }
     if !self.nickname.isEmpty {
-      try visitor.visitSingularStringField(value: self.nickname, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.nickname, fieldNumber: 2)
     }
     if !self.avatar.isEmpty {
-      try visitor.visitSingularStringField(value: self.avatar, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.avatar, fieldNumber: 3)
     }
-    if !self.client.isEmpty {
-      try visitor.visitSingularStringField(value: self.client, fieldNumber: 5)
-    }
-    if !self.subDomain.isEmpty {
-      try visitor.visitSingularStringField(value: self.subDomain, fieldNumber: 6)
+    if !self.type.isEmpty {
+      try visitor.visitSingularStringField(value: self.type, fieldNumber: 4)
     }
     if !self.extra.isEmpty {
-      try visitor.visitSingularStringField(value: self.extra, fieldNumber: 7)
+      try visitor.visitSingularStringField(value: self.extra, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Bytedesk_User, rhs: Bytedesk_User) -> Bool {
+  static func ==(lhs: User, rhs: User) -> Bool {
     if lhs.uid != rhs.uid {return false}
-    if lhs.username != rhs.username {return false}
     if lhs.nickname != rhs.nickname {return false}
     if lhs.avatar != rhs.avatar {return false}
-    if lhs.client != rhs.client {return false}
-    if lhs.subDomain != rhs.subDomain {return false}
+    if lhs.type != rhs.type {return false}
     if lhs.extra != rhs.extra {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Bytedesk_UserList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UserList"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "list"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.list) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.list.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.list, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Bytedesk_UserList, rhs: Bytedesk_UserList) -> Bool {
-    if lhs.list != rhs.list {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

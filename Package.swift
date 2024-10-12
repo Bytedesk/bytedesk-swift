@@ -21,7 +21,9 @@ let package = Package(
         .package(url: "https://gitee.com/270580156/Kingfisher", .upToNextMajor(from: "7.0.0")),
         .package(url: "https://gitee.com/270580156/CocoaMQTT", from: "2.1.6"),
         .package(url: "https://gitee.com/270580156/SQLite.swift", from: "0.14.1"),
-        .package(url: "https://gitee.com/270580156/swift-protobuf", from: "1.22.1")
+        .package(url: "https://gitee.com/270580156/swift-protobuf", from: "1.22.1"),
+        .package(url: "https://gitee.com/270580156/Reachability.swift", from: "5.2.4"),
+//        .package(url: "https://gitee.com/270580156/SwiftStomp.git", from: "1.2.1")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -35,6 +37,8 @@ let package = Package(
                 "Kingfisher",
                 .product(name: "SwiftProtobuf", package: "swift-protobuf"),
                 .product(name: "SQLite", package: "SQLite.swift"),
+                .product(name: "Reachability", package: "Reachability.swift"),
+//                "SwiftStomp"
             ],
             resources: [
                 .process("Resources/Media.xcassets"),

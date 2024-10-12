@@ -9,7 +9,7 @@ import Foundation
 
 public class BDThreadResult: Codable {
     //
-    var status_code: Int?
+    var code: Int?
     var message: String?
     var data: BDMessageModel?
 }

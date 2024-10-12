@@ -1,0 +1,6 @@
+framework module Pods_bytedesk_demo {
+  umbrella header "Pods-bytedesk-demo-umbrella.h"
+
+  export *
+  module * { export * }
+}

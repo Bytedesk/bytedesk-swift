@@ -7,6 +7,9 @@
 // For information on using the generated types, please see the documentation:
 //   https://github.com/apple/swift-protobuf/
 
+/// prevent naming conflicts between different projects.
+/// package protobuf.proto;
+
 import Foundation
 import SwiftProtobuf
 
@@ -20,77 +23,58 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Bytedesk_Thread {
+struct Thread {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// ID
-  var tid: String = String()
+  var uid: String = String()
+
+  /// 订阅主题
+  var topic: String = String()
 
   /// 会话类型
   var type: String = String()
 
-  /// 来源客户端
-  var client: String = String()
+  /// 会话状态
+  var status: String = String()
 
-  var nickname: String = String()
+  /// 头像昵称等信息
+  var user: User {
+    get {return _user ?? User()}
+    set {_user = newValue}
+  }
+  /// Returns true if `user` has been explicitly set.
+  var hasUser: Bool {return self._user != nil}
+  /// Clears the value of `user`. Subsequent reads from it will return its default value.
+  mutating func clearUser() {self._user = nil}
 
-  var avatar: String = String()
-
-  var content: String = String()
-
-  var timestamp: String = String()
-
-  var unreadCount: Int32 = 0
-
-  /// 主题：消息接收者为订阅此topic的人
-  var topic: String = String()
-
-  ///
-  /// 扩展字段
+  /// 自定义扩展/附加信息
   var extra: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-}
 
-/// 列表
-struct Bytedesk_ThreadList {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var list: [Bytedesk_Thread] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
+  fileprivate var _user: User? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
-extension Bytedesk_Thread: @unchecked Sendable {}
-extension Bytedesk_ThreadList: @unchecked Sendable {}
+extension Thread: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "Bytedesk"
-
-extension Bytedesk_Thread: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Thread"
+extension Thread: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "Thread"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tid"),
-    2: .same(proto: "type"),
-    5: .same(proto: "client"),
-    6: .same(proto: "nickname"),
-    7: .same(proto: "avatar"),
-    8: .same(proto: "content"),
-    9: .same(proto: "timestamp"),
-    10: .same(proto: "unreadCount"),
-    11: .same(proto: "topic"),
-    20: .same(proto: "extra"),
+    1: .same(proto: "uid"),
+    2: .same(proto: "topic"),
+    3: .same(proto: "type"),
+    4: .same(proto: "status"),
+    5: .same(proto: "user"),
+    6: .same(proto: "extra"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -99,98 +83,50 @@ extension Bytedesk_Thread: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.tid) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.type) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.client) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.nickname) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.avatar) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.content) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.timestamp) }()
-      case 10: try { try decoder.decodeSingularInt32Field(value: &self.unreadCount) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.topic) }()
-      case 20: try { try decoder.decodeSingularStringField(value: &self.extra) }()
+      case 1: try { try decoder.decodeSingularStringField(value: &self.uid) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.topic) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.type) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 5: try { try decoder.decodeSingularMessageField(value: &self._user) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.extra) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.tid.isEmpty {
-      try visitor.visitSingularStringField(value: self.tid, fieldNumber: 1)
-    }
-    if !self.type.isEmpty {
-      try visitor.visitSingularStringField(value: self.type, fieldNumber: 2)
-    }
-    if !self.client.isEmpty {
-      try visitor.visitSingularStringField(value: self.client, fieldNumber: 5)
-    }
-    if !self.nickname.isEmpty {
-      try visitor.visitSingularStringField(value: self.nickname, fieldNumber: 6)
-    }
-    if !self.avatar.isEmpty {
-      try visitor.visitSingularStringField(value: self.avatar, fieldNumber: 7)
-    }
-    if !self.content.isEmpty {
-      try visitor.visitSingularStringField(value: self.content, fieldNumber: 8)
-    }
-    if !self.timestamp.isEmpty {
-      try visitor.visitSingularStringField(value: self.timestamp, fieldNumber: 9)
-    }
-    if self.unreadCount != 0 {
-      try visitor.visitSingularInt32Field(value: self.unreadCount, fieldNumber: 10)
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if !self.uid.isEmpty {
+      try visitor.visitSingularStringField(value: self.uid, fieldNumber: 1)
     }
     if !self.topic.isEmpty {
-      try visitor.visitSingularStringField(value: self.topic, fieldNumber: 11)
+      try visitor.visitSingularStringField(value: self.topic, fieldNumber: 2)
     }
+    if !self.type.isEmpty {
+      try visitor.visitSingularStringField(value: self.type, fieldNumber: 3)
+    }
+    if !self.status.isEmpty {
+      try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
+    }
+    try { if let v = self._user {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+    } }()
     if !self.extra.isEmpty {
-      try visitor.visitSingularStringField(value: self.extra, fieldNumber: 20)
+      try visitor.visitSingularStringField(value: self.extra, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Bytedesk_Thread, rhs: Bytedesk_Thread) -> Bool {
-    if lhs.tid != rhs.tid {return false}
-    if lhs.type != rhs.type {return false}
-    if lhs.client != rhs.client {return false}
-    if lhs.nickname != rhs.nickname {return false}
-    if lhs.avatar != rhs.avatar {return false}
-    if lhs.content != rhs.content {return false}
-    if lhs.timestamp != rhs.timestamp {return false}
-    if lhs.unreadCount != rhs.unreadCount {return false}
+  static func ==(lhs: Thread, rhs: Thread) -> Bool {
+    if lhs.uid != rhs.uid {return false}
     if lhs.topic != rhs.topic {return false}
+    if lhs.type != rhs.type {return false}
+    if lhs.status != rhs.status {return false}
+    if lhs._user != rhs._user {return false}
     if lhs.extra != rhs.extra {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Bytedesk_ThreadList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ThreadList"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "list"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.list) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.list.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.list, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Bytedesk_ThreadList, rhs: Bytedesk_ThreadList) -> Bool {
-    if lhs.list != rhs.list {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

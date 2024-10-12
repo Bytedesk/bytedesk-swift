@@ -81,7 +81,7 @@ extension BDChatKFViewController: UITableViewDelegate, UITableViewDataSource, BD
             let indexPath = IndexPath(row: tag, section: 0)
             if indexPath.row < self.mMessageArray.count {
                 let itemToDelete = self.mMessageArray[indexPath.row]
-                BDCoreApis.deleteMessageByMid(itemToDelete.mid!)
+                BDCoreApis.deleteMessageByMid(itemToDelete.uid!)
                 //
                 self.mMessageArray.remove(at: indexPath.row)
                 self.mTableView!.deleteRows(at: [indexPath], with: .fade)
@@ -127,45 +127,40 @@ extension BDChatKFViewController: UITableViewDelegate, UITableViewDataSource, BD
     
     func robotQuestionClicked(aid: String, question: String, answer: String) {
         // debugPrint("tableview \(aid), \(question), \(answer)")
-        
-        let _ = self.insertLocalMessageAndReload(content: question, type: BD_MESSAGE_TYPE_TEXT, isSend: true)
-        
-        let _ = self.insertLocalMessageAndReload(content: answer, type: BD_MESSAGE_TYPE_ROBOT, isSend: false)
+//        
+//        let _ = self.insertLocalMessageAndReload(content: question, type: BD_MESSAGE_TYPE_TEXT, isSend: true)
+//        
+//        let _ = self.insertLocalMessageAndReload(content: answer, type: BD_MESSAGE_TYPE_ROBOT, isSend: false)
     }
-    
-    func insertLocalMessageAndReload(content: String, type: String, isSend: Bool) -> String {
+//    
+    func insertLocalMessageAndReload(content: String, type: String) -> BDMessageModel {
         
-        let localId = BDUtils.getGuid()
-        // TODO: 插入本地聊天记录，并显示
+        let localId = BDUtils.getUuidWithout()
+        // 插入本地聊天记录，并显示
         let messageModel = BDMessageModel()
-        messageModel.mid = localId
+        messageModel.uid = localId
         messageModel.type = type
         messageModel.content = content
         messageModel.contentAttr = BDUtils.transformContentToContentAttr(content)
-        if (type == BD_MESSAGE_TYPE_IMAGE) {
-            messageModel.imageUrl = content
-        } else if (type == BD_MESSAGE_TYPE_FILE) {
-            messageModel.imageUrl = content
-//            messageModel.fileUrl = content
-        } else if (type == BD_MESSAGE_TYPE_VOICE) {
-            messageModel.imageUrl = content
-//            messageModel.voiceUrl = content
-        } else if (type == BD_MESSAGE_TYPE_VIDEO) {
-            messageModel.imageUrl = content
-//            messageModel.videoUrl = content
-        }
-        messageModel.createdAt = BDUtils.getCurrentDate()
+        messageModel.status = BytedeskConstants.MESSAGE_STATUS_SENDING
+        messageModel.createdAt = BDUtils.getCurrentTimestamp()
+        messageModel.client = BytedeskConstants.HTTP_CLIENT
+        messageModel.extra = BDUtils.getMessageExtra(orgUid: BDSettings.getOrgUid()!)
         //
-        messageModel.thread?.tid = mThreadModel?.tid
+        messageModel.thread?.uid = mThreadModel?.uid
         messageModel.thread?.topic = mThreadModel?.topic
         messageModel.thread?.type = mThreadModel?.type
+        messageModel.thread?.status = mThreadModel?.status
+        messageModel.thread?.user = mThreadModel?.user
         //
-        if (isSend) {
-            messageModel.user?.uid = BDSettings.getUid()
-        } else {
-            // TODO:
-            messageModel.user?.uid = ""
-        }
+        messageModel.user?.uid = BDSettings.getUid()
+        messageModel.user?.nickname = BDSettings.getNickname()
+        messageModel.user?.avatar = BDSettings.getAvatar()
+//        if (isSend) {
+//            messageModel.user?.uid = BDSettings.getUid()
+//        } else {
+//            messageModel.user?.uid = ""
+//        }
         mMessageArray.append(messageModel)
         //
         let insertIndexPath = IndexPath(row: mMessageArray.count - 1, section: 0)
@@ -176,7 +171,7 @@ extension BDChatKFViewController: UITableViewDelegate, UITableViewDataSource, BD
         BDCoreApis.insertMessage(messageModel)
         mTableView?.scrollToRow(at: insertIndexPath, at: .middle, animated: true)
         //
-        return localId
+        return messageModel
     }
     
     

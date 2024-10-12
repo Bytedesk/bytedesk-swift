@@ -16,12 +16,15 @@ class BDChatKFViewController: UIViewController {
     let RECORD_VOICE_VIEW_HUD_WIDTH_HEIGHT = 150.0
     let TIMESTAMP_HEIGHT                   = 30.0
     //
+    var mSid: String = ""
+    var mType: String = "0"
+    var mForceAgent: Bool = false
+    var mThreadTopic: String = ""
+//
     var mTitle: String? = "Chat"
-    var mUUid: String? = ""
-    var mTid: String? = ""
     var mIsPush: Bool? = true
     var mIsRobot: Bool? = false
-    var mThreadType: String?
+    
     //
     var inputViewY: CGFloat?
     var keyboardY: CGFloat?
@@ -50,41 +53,14 @@ class BDChatKFViewController: UIViewController {
     var msgIdentifier: String? = "msgCell"
     
     // 请求技能组会话
-    func initWithWorkGroupWid(wid: String?, _ title: String?, _ isPush: Bool?) {
-        self.mUUid = wid
-        self.mTitle = title
-        self.mIsPush = isPush
-        self.navigationItem.title = title
-//        self.mThreadModel = BDThread()
-        self.mThreadType = BD_THREAD_TYPE_WORKGROUP
-        // 请求会话
+    func initInfo(type: String, sid: String, forceAgent: Bool) {
+        
+        self.mType = type
+        self.mSid = sid
+        self.mForceAgent = forceAgent
+        self.mThreadTopic = BDUtils.formatThreadTopic(type: type, sid: sid, userUid: BDSettings.getUid()!)
+        
         requestThread()
-    }
-    
-    func initWithWorkGroupWid(wid: String?, _ title: String?, _ isPush: Bool?, custom: [String: Any]) {
-        self.mWithCustomDict = true
-        self.mCustomDict = custom
-        //
-        self.initWithWorkGroupWid(wid: wid, title, isPush)
-    }
-    
-    // 请求指定客服会话
-    func initWithAgentUid(uid: String?, _ title: String?, _ isPush: Bool?) {
-        self.mUUid = uid
-        self.mTitle = title
-        self.mIsPush = isPush
-        self.navigationItem.title = title
-//        self.mThreadModel = BDThread()
-        self.mThreadType = BD_THREAD_TYPE_APPOINTED
-        // 请求会话
-        requestThread()
-    }
-    
-    func initWithAgentUid(uid: String?, _ title: String?, _ isPush: Bool?, custom: [String: Any]) {
-        self.mWithCustomDict = true
-        self.mCustomDict = custom
-        //
-        self.initWithAgentUid(uid: uid, title, isPush)
     }
     
     //
@@ -235,17 +211,17 @@ class BDChatKFViewController: UIViewController {
     
     func reloadTableData(_ animated: Bool) {
         // debugPrint("\(#function)")
-//        mMessageArray = BDCoreApis.getMessagesWithThread(mTid!)
-        mMessageArray = BDCoreApis.getMessagesWithWorkGroup(mUUid!)
-        for i in 0..<mMessageArray.count {
-            let messageModel = mMessageArray[i]
-            if (messageModel.type == BD_MESSAGE_TYPE_ROBOT) {
-                messageModel.content = BDUtils.appendAnswersToContent(messageModel)
-                //
-                messageModel.contentAttr = BDUtils.transformContentToContentAttr(messageModel.content!)
-                mMessageArray[i] = messageModel
-            }
-        }
+        mMessageArray = BDCoreApis.getMessagesWithThread(mThreadTopic)
+//        mMessageArray = BDCoreApis.getMessagesWithWorkGroup(mSid)
+//        for i in 0..<mMessageArray.count {
+//            let messageModel = mMessageArray[i]
+//            if (messageModel.type == BD_MESSAGE_TYPE_ROBOT) {
+//                messageModel.content = BDUtils.appendAnswersToContent(messageModel)
+//                //
+//                messageModel.contentAttr = BDUtils.transformContentToContentAttr(messageModel.content!)
+//                mMessageArray[i] = messageModel
+//            }
+//        }
         mTableView?.reloadData()
         tableViewScrollToBottom(animated)
     }
@@ -260,7 +236,7 @@ class BDChatKFViewController: UIViewController {
         })
         actionSheet.addAction(UIAlertAction(title: "清空聊天记录", style: .default) { _ in
             // Handle "清空聊天记录" action
-            BDCoreApis.deleteMessagesByWorkGroup(self.mUUid!)
+            BDCoreApis.deleteMessagesByWorkGroup(self.mSid)
             //
             self.reloadTableData(true)
         })
@@ -269,7 +245,6 @@ class BDChatKFViewController: UIViewController {
 
     
     // MARK: 延迟初始化
-    
     func initEmotionLazy() {
         if (mEmotionView == nil) {
             mEmotionView = BDEmotionView(frame: CGRectMake(0.0, self.view.frame.size.height, self.view.frame.size.width, EMOTION_PLUS_VIEW_HEIGHT))

@@ -50,7 +50,7 @@
 //        .background(Color.clear)
 ////        .background(Color("light_gray", bundle: .module))
 //        .edgesIgnoringSafeArea(.bottom)
-//        .navigationBarTitle("萝卜丝", displayMode: .inline)
+//        .navigationBarTitle("微语", displayMode: .inline)
 //        .onAppear {
 //    //        TODO: 请求客服会话
 ////            if (self.type == BD_THREAD_REQUEST_TYPE_WORK_GROUP) {

@@ -55,7 +55,7 @@ public class BDSettings: NSObject {
     }
     
     static func getUid() -> String? {
-        return UserDefaults.standard.string(forKey: BD_UID) ?? ""
+        return UserDefaults.standard.string(forKey: BytedeskConstants.VISITOR_UID) ?? ""
     }
     
     static func getUsername() -> String? {
@@ -67,11 +67,15 @@ public class BDSettings: NSObject {
     }
     
     static func getNickname() -> String? {
-        return UserDefaults.standard.string(forKey: BD_NICKNAME) ?? ""
+        return UserDefaults.standard.string(forKey: BytedeskConstants.VISITOR_NICKNAME) ?? ""
     }
     
     static func getAvatar() -> String? {
-        return UserDefaults.standard.string(forKey: BD_AVATAR) ?? ""
+        return UserDefaults.standard.string(forKey: BytedeskConstants.VISITOR_AVATAR) ?? ""
+    }
+    
+    static func getOrgUid() -> String? {
+        return UserDefaults.standard.string(forKey: BytedeskConstants.VISITOR_ORGUID) ?? ""
     }
         
     /// set
@@ -85,12 +89,10 @@ public class BDSettings: NSObject {
     }
     
     static func setUid(_ uid: String?) {
-//        // debugPrint("setUid: \(uid!)")
-        UserDefaults.standard.set(uid!, forKey: BD_UID)
+        UserDefaults.standard.set(uid!, forKey: BytedeskConstants.VISITOR_UID)
     }
     
     static func setUsername(_ username: String?) {
-//        // debugPrint("setUsername: \(username!)")
         UserDefaults.standard.set(username!, forKey: BD_USERNAME)
     }
     
@@ -99,16 +101,20 @@ public class BDSettings: NSObject {
     }
     
     static func setNickname(_ nickname: String?) {
-        UserDefaults.standard.set(nickname, forKey: BD_NICKNAME)
+        UserDefaults.standard.set(nickname, forKey: BytedeskConstants.VISITOR_NICKNAME)
     }
     
     static func setAvatar(_ avatar: String?) {
-        UserDefaults.standard.set(avatar, forKey: BD_AVATAR)
+        UserDefaults.standard.set(avatar, forKey: BytedeskConstants.VISITOR_AVATAR)
+    }
+    
+    static func setOrgUid(_ orgUid: String?) {
+        UserDefaults.standard.set(orgUid, forKey: BytedeskConstants.VISITOR_ORGUID)
     }
     
     static func setUserInfo(_ user: BDUserModel?) {
         setUid(user?.uid)
-        setUsername(user?.username)
+//        setUsername(user?.username)
         setNickname(user?.nickname)
         setAvatar(user?.avatar)
     }

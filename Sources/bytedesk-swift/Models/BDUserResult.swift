@@ -10,7 +10,7 @@ import Foundation
 // , ObservableObject, Identifiable, Equatable
 public class BDUserResult: Codable {
     //
-    public var status_code: Int?
+    public var code: Int?
     public var message: String?
     public var data: BDUserModel?
 }

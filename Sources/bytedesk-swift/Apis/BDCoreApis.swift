@@ -282,10 +282,8 @@ public class BDCoreApis: NSObject {
     }
     
     /// 查询
-    static func getMessagesWithThread(_ tid: String) -> [BDMessageModel] {
-        
-        return BDDBApis.sharedInstance().queryMessagesByThreadTid(tid)
-//        return BDDBApis.sharedInstance().queryMessage()
+    static func getMessagesWithThread(_ threadTopic: String) -> [BDMessageModel] {
+        return BDDBApis.sharedInstance().queryMessagesByThreadTopic(threadTopic)
     }
     
     /// 查询
@@ -348,12 +346,7 @@ public class BDCoreApis: NSObject {
         
         BDDBApis.sharedInstance().clearMessageTable()
     }
-    
-    static func deleteMessagesByThreadTid(_ threadTid: String) {
-        
-        BDDBApis.sharedInstance().deleteMessagesByThreadTid(threadTid)
-    }
-    
+
     static func deleteMessagesByWorkGroup(_ wid: String) {
         
         let threadTopic = wid + "/" + BDSettings.getUid()!

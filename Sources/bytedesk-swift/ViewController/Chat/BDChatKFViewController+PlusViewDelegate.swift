@@ -77,7 +77,7 @@ extension BDChatKFViewController: BDPlusViewDelegate {
     func shareLeaveMsgButtonPressed() {
         // debugPrint("\(#function)")
         let leaveMessageVC = BDLeaveMessageViewController()
-        leaveMessageVC.initWithType(type: self.mThreadType!, uid: self.mUUid!, isPush: false)
+//        leaveMessageVC.initWithType(type: self.mType!, uid: self.mSid!, isPush: false)
         let leavenavigationController = UINavigationController(rootViewController: leaveMessageVC)
         self.navigationController?.present(leavenavigationController, animated: true, completion: nil)
     }
@@ -85,7 +85,7 @@ extension BDChatKFViewController: BDPlusViewDelegate {
     func shareRateButtonPressed() {
         // debugPrint("\(#function)")
         let ratevc = BDRateViewController()
-        ratevc.initWithThreadTid(self.mTid!, withPush: false)
+//        ratevc.initWithThreadTid(self.mThreadUid!, withPush: false)
         self.navigationController?.present(ratevc, animated: true, completion: nil)
     }
     

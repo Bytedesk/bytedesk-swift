@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CF6EB398B8B4DEFAB13DC5810D093BA /* Pods-bytedesk-demo-bytedesk-demoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D82B5CE0AAAC5B770A240A7599AF0C84 /* Pods-bytedesk-demo-bytedesk-demoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B386DBF2E5B1D85902D17FFBE68CEF5 /* Pods-bytedesk-demo-bytedesk-demoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1830205AD3F8A4FDFA7D8735664FFFF /* Pods-bytedesk-demo-bytedesk-demoUITests-dummy.m */; };
+		35B2909909D976FD9CB046FF67059A24 /* Pods-bytedesk-demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD0B49A3E1C85D06171B6AAA76AE3E74 /* Pods-bytedesk-demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6598C99BA52FCDE10F9F18A7C63DEE39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8E5470E099910A487FD247284298B2D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		94E82BB24159445FD19C92371BBF9254 /* Pods-bytedesk-demoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC05FDAC18744DA4E012C86E2F1D985 /* Pods-bytedesk-demoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2477A4932637AA9EFA004F7FCF042A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E6DB93A962C4DECA8B98010DC094F645 /* Pods-bytedesk-demoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C80485FD5B05057ABDD1E48F460CE92 /* Pods-bytedesk-demoTests-dummy.m */; };
+		EE1076E7A76C5041CC79E240F9A4648E /* Pods-bytedesk-demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D504B4479F7F48F9F5B23309E9DCF66B /* Pods-bytedesk-demo-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E719DFACF801612DCC03955E2A43DBF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCD81A75933AF728F56B7D0934187C14;
+			remoteInfo = "Pods-bytedesk-demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		006C2EDEB53ED12827E4936E6B3D7A07 /* Pods-bytedesk-demo-bytedesk-demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bytedesk-demo-bytedesk-demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		05BEFF1E572147B12488474758DAD588 /* Pods-bytedesk-demo-bytedesk-demoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bytedesk-demo-bytedesk-demoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1401DDA2F44CE0C978D1C6BA20A54F07 /* Pods-bytedesk-demoTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-bytedesk-demoTests"; path = Pods_bytedesk_demoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E5A0D160211BA2FDAD40A1C031F04BD /* Pods-bytedesk-demo-bytedesk-demoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-bytedesk-demo-bytedesk-demoUITests.modulemap"; sourceTree = "<group>"; };
+		53C77DEF284E02A65275CF33BF527666 /* Pods-bytedesk-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bytedesk-demo.release.xcconfig"; sourceTree = "<group>"; };
+		5A617F5C9FB1B4ABA42DD06926A1C73A /* Pods-bytedesk-demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-bytedesk-demo.modulemap"; sourceTree = "<group>"; };
+		63ADB04B498C69DF6E41258851E08D0E /* Pods-bytedesk-demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bytedesk-demo-Info.plist"; sourceTree = "<group>"; };
+		69E3AA5C329C4F80080B17C5B77C8F9B /* Pods-bytedesk-demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-bytedesk-demo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6A7C1B0C15674B3F4BB73DE6E0C78A83 /* Pods-bytedesk-demo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-bytedesk-demo"; path = Pods_bytedesk_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7F537C5E7AAA4573103D41379E69D92A /* Pods-bytedesk-demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bytedesk-demoTests.release.xcconfig"; sourceTree = "<group>"; };
+		8931AFE5342CCF202E7AF2B020E60042 /* Pods-bytedesk-demoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-bytedesk-demoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8C5B1139D93317AAB4E6D15C001BD2BD /* Pods-bytedesk-demoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bytedesk-demoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C80485FD5B05057ABDD1E48F460CE92 /* Pods-bytedesk-demoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-bytedesk-demoTests-dummy.m"; sourceTree = "<group>"; };
+		8D0C2EEEE014E2F625C149B5E93CB120 /* Pods-bytedesk-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bytedesk-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		94E7D5E42E86FA10E9623A2690DCD886 /* Pods-bytedesk-demo-bytedesk-demoUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-bytedesk-demo-bytedesk-demoUITests"; path = Pods_bytedesk_demo_bytedesk_demoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9FEF70C53A2BD9BA46A8EFF4ED9C1F4A /* Pods-bytedesk-demoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-bytedesk-demoTests.modulemap"; sourceTree = "<group>"; };
+		A01BBD5D080F70970121B493E90B9A41 /* Pods-bytedesk-demo-bytedesk-demoUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bytedesk-demo-bytedesk-demoUITests-Info.plist"; sourceTree = "<group>"; };
+		A06F91934753E635155A2C6C5BF2E581 /* Pods-bytedesk-demoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bytedesk-demoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D504B4479F7F48F9F5B23309E9DCF66B /* Pods-bytedesk-demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-bytedesk-demo-dummy.m"; sourceTree = "<group>"; };
+		D5AAA919F8F90540916DE32E7CA16DC7 /* Pods-bytedesk-demo-bytedesk-demoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-bytedesk-demo-bytedesk-demoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D82B5CE0AAAC5B770A240A7599AF0C84 /* Pods-bytedesk-demo-bytedesk-demoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-bytedesk-demo-bytedesk-demoUITests-umbrella.h"; sourceTree = "<group>"; };
+		D8BE97CFD5771AC42641C5C744699635 /* Pods-bytedesk-demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bytedesk-demo-acknowledgements.plist"; sourceTree = "<group>"; };
+		DD0B49A3E1C85D06171B6AAA76AE3E74 /* Pods-bytedesk-demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-bytedesk-demo-umbrella.h"; sourceTree = "<group>"; };
+		DEC05FDAC18744DA4E012C86E2F1D985 /* Pods-bytedesk-demoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-bytedesk-demoTests-umbrella.h"; sourceTree = "<group>"; };
+		E1830205AD3F8A4FDFA7D8735664FFFF /* Pods-bytedesk-demo-bytedesk-demoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-bytedesk-demo-bytedesk-demoUITests-dummy.m"; sourceTree = "<group>"; };
+		E89341B5334308AC363AB3B89C45B2B6 /* Pods-bytedesk-demo-bytedesk-demoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bytedesk-demo-bytedesk-demoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FDD9281ACF410AAF43BDFC128BCAF4DB /* Pods-bytedesk-demoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bytedesk-demoTests-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57997FA592D442ADCF6112340CF27AE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E5470E099910A487FD247284298B2D3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7471EF17A59BECA69D9C0310513A7F30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6598C99BA52FCDE10F9F18A7C63DEE39 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C9B0A8D25DF0F189264E0F20D01437E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2477A4932637AA9EFA004F7FCF042A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D78745D8F83DA08C18CEBA52FBA55AE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4C5D04C85FD6DD9A236432DE46C1CB1 /* Pods-bytedesk-demo */,
+				0FD189E4AA6D45472C9AC1E05F02D9B0 /* Pods-bytedesk-demo-bytedesk-demoUITests */,
+				8EA2F3C95A67538CF925F6EFED1A85F8 /* Pods-bytedesk-demoTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		0FD189E4AA6D45472C9AC1E05F02D9B0 /* Pods-bytedesk-demo-bytedesk-demoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4E5A0D160211BA2FDAD40A1C031F04BD /* Pods-bytedesk-demo-bytedesk-demoUITests.modulemap */,
+				D5AAA919F8F90540916DE32E7CA16DC7 /* Pods-bytedesk-demo-bytedesk-demoUITests-acknowledgements.markdown */,
+				05BEFF1E572147B12488474758DAD588 /* Pods-bytedesk-demo-bytedesk-demoUITests-acknowledgements.plist */,
+				E1830205AD3F8A4FDFA7D8735664FFFF /* Pods-bytedesk-demo-bytedesk-demoUITests-dummy.m */,
+				A01BBD5D080F70970121B493E90B9A41 /* Pods-bytedesk-demo-bytedesk-demoUITests-Info.plist */,
+				D82B5CE0AAAC5B770A240A7599AF0C84 /* Pods-bytedesk-demo-bytedesk-demoUITests-umbrella.h */,
+				006C2EDEB53ED12827E4936E6B3D7A07 /* Pods-bytedesk-demo-bytedesk-demoUITests.debug.xcconfig */,
+				E89341B5334308AC363AB3B89C45B2B6 /* Pods-bytedesk-demo-bytedesk-demoUITests.release.xcconfig */,
+			);
+			name = "Pods-bytedesk-demo-bytedesk-demoUITests";
+			path = "Target Support Files/Pods-bytedesk-demo-bytedesk-demoUITests";
+			sourceTree = "<group>";
+		};
+		1462295891A94F2120840082F18D56DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A7C1B0C15674B3F4BB73DE6E0C78A83 /* Pods-bytedesk-demo */,
+				94E7D5E42E86FA10E9623A2690DCD886 /* Pods-bytedesk-demo-bytedesk-demoUITests */,
+				1401DDA2F44CE0C978D1C6BA20A54F07 /* Pods-bytedesk-demoTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		8EA2F3C95A67538CF925F6EFED1A85F8 /* Pods-bytedesk-demoTests */ = {
+			isa = PBXGroup;
+			children = (
+				9FEF70C53A2BD9BA46A8EFF4ED9C1F4A /* Pods-bytedesk-demoTests.modulemap */,
+				8931AFE5342CCF202E7AF2B020E60042 /* Pods-bytedesk-demoTests-acknowledgements.markdown */,
+				A06F91934753E635155A2C6C5BF2E581 /* Pods-bytedesk-demoTests-acknowledgements.plist */,
+				8C80485FD5B05057ABDD1E48F460CE92 /* Pods-bytedesk-demoTests-dummy.m */,
+				FDD9281ACF410AAF43BDFC128BCAF4DB /* Pods-bytedesk-demoTests-Info.plist */,
+				DEC05FDAC18744DA4E012C86E2F1D985 /* Pods-bytedesk-demoTests-umbrella.h */,
+				8C5B1139D93317AAB4E6D15C001BD2BD /* Pods-bytedesk-demoTests.debug.xcconfig */,
+				7F537C5E7AAA4573103D41379E69D92A /* Pods-bytedesk-demoTests.release.xcconfig */,
+			);
+			name = "Pods-bytedesk-demoTests";
+			path = "Target Support Files/Pods-bytedesk-demoTests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				1462295891A94F2120840082F18D56DF /* Products */,
+				0D78745D8F83DA08C18CEBA52FBA55AE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4C5D04C85FD6DD9A236432DE46C1CB1 /* Pods-bytedesk-demo */ = {
+			isa = PBXGroup;
+			children = (
+				5A617F5C9FB1B4ABA42DD06926A1C73A /* Pods-bytedesk-demo.modulemap */,
+				69E3AA5C329C4F80080B17C5B77C8F9B /* Pods-bytedesk-demo-acknowledgements.markdown */,
+				D8BE97CFD5771AC42641C5C744699635 /* Pods-bytedesk-demo-acknowledgements.plist */,
+				D504B4479F7F48F9F5B23309E9DCF66B /* Pods-bytedesk-demo-dummy.m */,
+				63ADB04B498C69DF6E41258851E08D0E /* Pods-bytedesk-demo-Info.plist */,
+				DD0B49A3E1C85D06171B6AAA76AE3E74 /* Pods-bytedesk-demo-umbrella.h */,
+				8D0C2EEEE014E2F625C149B5E93CB120 /* Pods-bytedesk-demo.debug.xcconfig */,
+				53C77DEF284E02A65275CF33BF527666 /* Pods-bytedesk-demo.release.xcconfig */,
+			);
+			name = "Pods-bytedesk-demo";
+			path = "Target Support Files/Pods-bytedesk-demo";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		45F70F88FE86D15E3810738672288FED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35B2909909D976FD9CB046FF67059A24 /* Pods-bytedesk-demo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D85EC4E3D7D6E6AD11D6E47ACE16B1F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CF6EB398B8B4DEFAB13DC5810D093BA /* Pods-bytedesk-demo-bytedesk-demoUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D42C314B4B1C0F566C98B5A5641392D7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94E82BB24159445FD19C92371BBF9254 /* Pods-bytedesk-demoTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		049DA68BF1D747E2F01B05E10EEDE391 /* Pods-bytedesk-demoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 580EEBA7896F02DEDAC6F6F5FCC35855 /* Build configuration list for PBXNativeTarget "Pods-bytedesk-demoTests" */;
+			buildPhases = (
+				D42C314B4B1C0F566C98B5A5641392D7 /* Headers */,
+				8A3A8CC400ECC9A28262F9810B80809D /* Sources */,
+				57997FA592D442ADCF6112340CF27AE5 /* Frameworks */,
+				FF435493B235C681DAEE32E91F023976 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A89FED69A440974C2C644B46DCA1A77B /* PBXTargetDependency */,
+			);
+			name = "Pods-bytedesk-demoTests";
+			productName = Pods_bytedesk_demoTests;
+			productReference = 1401DDA2F44CE0C978D1C6BA20A54F07 /* Pods-bytedesk-demoTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		B7D1334074778C5391C2DFB7C47E6BE6 /* Pods-bytedesk-demo-bytedesk-demoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B92CF6933DDE81B2BA213CA54F61477A /* Build configuration list for PBXNativeTarget "Pods-bytedesk-demo-bytedesk-demoUITests" */;
+			buildPhases = (
+				7D85EC4E3D7D6E6AD11D6E47ACE16B1F /* Headers */,
+				2648F6681FBE746C81B7C06417381492 /* Sources */,
+				7471EF17A59BECA69D9C0310513A7F30 /* Frameworks */,
+				7D82FD34AED9F5356F408D6F23F646CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-bytedesk-demo-bytedesk-demoUITests";
+			productName = Pods_bytedesk_demo_bytedesk_demoUITests;
+			productReference = 94E7D5E42E86FA10E9623A2690DCD886 /* Pods-bytedesk-demo-bytedesk-demoUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		CCD81A75933AF728F56B7D0934187C14 /* Pods-bytedesk-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1793ED738B3EBD09CE2DA94CF6895BCF /* Build configuration list for PBXNativeTarget "Pods-bytedesk-demo" */;
+			buildPhases = (
+				45F70F88FE86D15E3810738672288FED /* Headers */,
+				25644ED6631FC4E495A519055F8668EF /* Sources */,
+				8C9B0A8D25DF0F189264E0F20D01437E /* Frameworks */,
+				6E75593A6C63EDA22CF991C27A7D9EC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-bytedesk-demo";
+			productName = Pods_bytedesk_demo;
+			productReference = 6A7C1B0C15674B3F4BB73DE6E0C78A83 /* Pods-bytedesk-demo */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 1462295891A94F2120840082F18D56DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCD81A75933AF728F56B7D0934187C14 /* Pods-bytedesk-demo */,
+				B7D1334074778C5391C2DFB7C47E6BE6 /* Pods-bytedesk-demo-bytedesk-demoUITests */,
+				049DA68BF1D747E2F01B05E10EEDE391 /* Pods-bytedesk-demoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E75593A6C63EDA22CF991C27A7D9EC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D82FD34AED9F5356F408D6F23F646CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF435493B235C681DAEE32E91F023976 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25644ED6631FC4E495A519055F8668EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE1076E7A76C5041CC79E240F9A4648E /* Pods-bytedesk-demo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2648F6681FBE746C81B7C06417381492 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B386DBF2E5B1D85902D17FFBE68CEF5 /* Pods-bytedesk-demo-bytedesk-demoUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A3A8CC400ECC9A28262F9810B80809D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6DB93A962C4DECA8B98010DC094F645 /* Pods-bytedesk-demoTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A89FED69A440974C2C644B46DCA1A77B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-bytedesk-demo";
+			target = CCD81A75933AF728F56B7D0934187C14 /* Pods-bytedesk-demo */;
+			targetProxy = E719DFACF801612DCC03955E2A43DBF2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0DD341E4F5463CF858651C7E2F7BCA91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E89341B5334308AC363AB3B89C45B2B6 /* Pods-bytedesk-demo-bytedesk-demoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-bytedesk-demo-bytedesk-demoUITests/Pods-bytedesk-demo-bytedesk-demoUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bytedesk-demo-bytedesk-demoUITests/Pods-bytedesk-demo-bytedesk-demoUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		355F88AE9019FFDAB0F3AED521B77D67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D0C2EEEE014E2F625C149B5E93CB120 /* Pods-bytedesk-demo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-bytedesk-demo/Pods-bytedesk-demo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bytedesk-demo/Pods-bytedesk-demo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		569A967A676DDE2CE33BA82155225DE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53C77DEF284E02A65275CF33BF527666 /* Pods-bytedesk-demo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-bytedesk-demo/Pods-bytedesk-demo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bytedesk-demo/Pods-bytedesk-demo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5F07E5E2E89F6F60D389CA391E5294A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 006C2EDEB53ED12827E4936E6B3D7A07 /* Pods-bytedesk-demo-bytedesk-demoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-bytedesk-demo-bytedesk-demoUITests/Pods-bytedesk-demo-bytedesk-demoUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bytedesk-demo-bytedesk-demoUITests/Pods-bytedesk-demo-bytedesk-demoUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5F43F2291261115D5EC8F4419CFD855B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C5B1139D93317AAB4E6D15C001BD2BD /* Pods-bytedesk-demoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-bytedesk-demoTests/Pods-bytedesk-demoTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bytedesk-demoTests/Pods-bytedesk-demoTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		60953E193EDEEA6B4589B7FFF0733678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F537C5E7AAA4573103D41379E69D92A /* Pods-bytedesk-demoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-bytedesk-demoTests/Pods-bytedesk-demoTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bytedesk-demoTests/Pods-bytedesk-demoTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1793ED738B3EBD09CE2DA94CF6895BCF /* Build configuration list for PBXNativeTarget "Pods-bytedesk-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				355F88AE9019FFDAB0F3AED521B77D67 /* Debug */,
+				569A967A676DDE2CE33BA82155225DE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B9E26EAE2CD392AD762421F663075A1 /* Debug */,
+				63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		580EEBA7896F02DEDAC6F6F5FCC35855 /* Build configuration list for PBXNativeTarget "Pods-bytedesk-demoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F43F2291261115D5EC8F4419CFD855B /* Debug */,
+				60953E193EDEEA6B4589B7FFF0733678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B92CF6933DDE81B2BA213CA54F61477A /* Build configuration list for PBXNativeTarget "Pods-bytedesk-demo-bytedesk-demoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F07E5E2E89F6F60D389CA391E5294A8 /* Debug */,
+				0DD341E4F5463CF858651C7E2F7BCA91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -9,6 +9,35 @@ import Foundation
 import UIKit
 
 public class BDUtils {
+
+    static func getMessageExtra(orgUid: String) -> String {
+//        return { "orgUid" : orgUid }
+        let msgExtra: BDMessageExtra = BDMessageExtra()
+        msgExtra.orgUid = BDSettings.getOrgUid()
+        // 将msgExtra 转换为json字符串
+        // let jsonData = try? JSONSerialization.data(withJSONObject: msgExtra, options: .prettyPrinted)
+        // return String(data: jsonData!, encoding: .utf8)!
+        let encoder = JSONEncoder()
+        let messageExtraJson = try! encoder.encode(msgExtra)
+        let messageExtraJsonString = String(data: messageExtraJson, encoding: .utf8)
+        return messageExtraJsonString!
+    }
+    
+    static func formatThreadTopic(type: String, sid: String, userUid: String) -> String {
+        if type == "1" {
+            return "org/workgroup/\(sid)/\(userUid)"
+        } else {
+            return "org/agent/\(sid)/\(userUid)"
+        }
+    }
+
+    static func getUuid() -> String {
+        return UUID().uuidString
+    }
+
+    static func getUuidWithout() -> String {
+        return UUID().uuidString.replacingOccurrences(of: "-", with: "")
+    }
     
     static func getGuid() -> String {
         let dateFormatter = DateFormatter()
@@ -101,10 +130,10 @@ public class BDUtils {
     }
     
     static func appendAnswersToContent(_ messageModel: BDMessageModel) -> String? {
-        for j in 0..<messageModel.answers.count {
-            let msgAnswer = messageModel.answers[j]
-            messageModel.content = String(format: "%@\n\n<p><a href=\"robot://%@??%@??%@\">%@</a></p>", messageModel.content!, msgAnswer.aid!, BDUtils.encodeString(msgAnswer.question!)!, BDUtils.encodeString(msgAnswer.answer!)!, msgAnswer.question!)
-        }
+//        for j in 0..<messageModel.answers.count {
+//            let msgAnswer = messageModel.answers[j]
+//            messageModel.content = String(format: "%@\n\n<p><a href=\"robot://%@??%@??%@\">%@</a></p>", messageModel.content!, msgAnswer.aid!, BDUtils.encodeString(msgAnswer.question!)!, BDUtils.encodeString(msgAnswer.answer!)!, msgAnswer.question!)
+//        }
         return messageModel.content
     }
     

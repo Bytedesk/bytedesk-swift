@@ -13,16 +13,11 @@ public class BDUserModel: Codable, Identifiable, ObservableObject {
     public var username: String?
     public var nickname: String?
     public var avatar: String?
-    public var mobile: String?
-    public var description: String?
-    public var sex: Bool?
-    public var location: String?
-    public var birthday: String?
-    public var subDomain: String?
-    //
-//    init(uid: String, nickname: String, avatar: String) {
-//        self.uid = uid
-//        self.nickname = nickname
-//        self.avatar = avatar
-//    }
+    
+    // MARK: - Codable
+    enum CodingKeys: String, CodingKey {
+        case uid
+        case nickname
+        case avatar
+    }
 }

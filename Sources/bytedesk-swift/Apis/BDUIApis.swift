@@ -4,7 +4,6 @@
 //
 //  Created by 宁金鹏 on 2023/8/19.
 //
-
 import UIKit
 import ObjectiveC.runtime
 
@@ -18,57 +17,62 @@ public class BDUIApis: NSObject {
         return Static.instance
     }
     
-    static public func pushWorkGroupChat(navController: UINavigationController, wid: String, title: String) {
+    static public func pushWorkGroupChat(navController: UINavigationController, uid: String) {
         let chatVC = BDChatKFViewController()
-        chatVC.initWithWorkGroupWid(wid: wid, title, true)
+        chatVC.initInfo(type: "1", sid: uid, forceAgent: false)
+//        chatVC.initWithWorkGroupWid(wid: wid, title, true)
         navController.pushViewController(chatVC, animated: true)
     }
     
-    static public func pushWorkGroupChat(navController: UINavigationController, wid: String, title: String, custom: [String: Any]) {
+//    static public func pushWorkGroupChat(navController: UINavigationController, wid: String, title: String, custom: [String: Any]) {
+//        let chatVC = BDChatKFViewController()
+//        chatVC.initInfo(type: "1", sid: sid, forceAgent: false)
+////        chatVC.initWithWorkGroupWid(wid: wid, title, true, custom: custom)
+//        navController.pushViewController(chatVC, animated: true)
+//    }
+//    
+    static public func presentWorkGroupChat(navController: UINavigationController, uid: String) {
         let chatVC = BDChatKFViewController()
-        chatVC.initWithWorkGroupWid(wid: wid, title, true, custom: custom)
-        navController.pushViewController(chatVC, animated: true)
-    }
-    
-    static public func presentWorkGroupChat(navController: UINavigationController, wid: String, title: String) {
-        let chatVC = BDChatKFViewController()
-        chatVC.initWithWorkGroupWid(wid: wid, title, false)
+        chatVC.initInfo(type: "1", sid: uid, forceAgent: false)
+//        chatVC.initWithWorkGroupWid(wid: wid, title, false)
         let chatNavigationController = UINavigationController.init(rootViewController: chatVC)
         navController.present(chatNavigationController, animated: true)
     }
     
-    static public func presentWorkGroupChat(navController: UINavigationController, wid: String, title: String, custom: [String: Any]) {
+//    static public func presentWorkGroupChat(navController: UINavigationController, wid: String, title: String, custom: [String: Any]) {
+//        let chatVC = BDChatKFViewController()
+////        chatVC.initWithWorkGroupWid(wid: wid, title, false, custom: custom)
+//        let chatNavigationController = UINavigationController.init(rootViewController: chatVC)
+//        navController.present(chatNavigationController, animated: true)
+//    }
+//    
+    static public func pushAppointChat(navController: UINavigationController, uid: String) {
         let chatVC = BDChatKFViewController()
-        chatVC.initWithWorkGroupWid(wid: wid, title, false, custom: custom)
-        let chatNavigationController = UINavigationController.init(rootViewController: chatVC)
-        navController.present(chatNavigationController, animated: true)
-    }
-    
-    static public func pushAppointChat(navController: UINavigationController, uid: String, title: String) {
-        let chatVC = BDChatKFViewController()
-        chatVC.initWithAgentUid(uid: uid, title, true)
+        chatVC.initInfo(type: "0", sid: uid, forceAgent: false)
+//        chatVC.initWithAgentUid(uid: uid, title, true)
         navController.pushViewController(chatVC, animated: true)
     }
     
-    static public func pushAppointChat(navController: UINavigationController, uid: String, title: String, custom: [String: Any]) {
-        let chatVC = BDChatKFViewController()
-        chatVC.initWithAgentUid(uid: uid, title, true, custom: custom)
-        navController.pushViewController(chatVC, animated: true)
-    }
+//    static public func pushAppointChat(navController: UINavigationController, uid: String, title: String, custom: [String: Any]) {
+//        let chatVC = BDChatKFViewController()
+////        chatVC.initWithAgentUid(uid: uid, title, true, custom: custom)
+//        navController.pushViewController(chatVC, animated: true)
+//    }
     
-    static public func presentAppointChat(navController: UINavigationController, uid: String, title: String) {
+    static public func presentAppointChat(navController: UINavigationController, uid: String) {
         let chatVC = BDChatKFViewController()
-        chatVC.initWithAgentUid(uid: uid, title, false)
+        chatVC.initInfo(type: "0", sid: uid, forceAgent: false)
+//        chatVC.initWithAgentUid(uid: uid, title, false)
         let chatNavigationController = UINavigationController.init(rootViewController: chatVC)
         navController.present(chatNavigationController, animated: true)
     }
     
-    static public func presentAppointChat(navController: UINavigationController, uid: String, title: String, custom: [String: Any]) {
-        let chatVC = BDChatKFViewController()
-        chatVC.initWithAgentUid(uid: uid, title, false, custom: custom)
-        let chatNavigationController = UINavigationController.init(rootViewController: chatVC)
-        navController.present(chatNavigationController, animated: true)
-    }
+//    static public func presentAppointChat(navController: UINavigationController, uid: String, title: String, custom: [String: Any]) {
+//        let chatVC = BDChatKFViewController()
+////        chatVC.initWithAgentUid(uid: uid, title, false, custom: custom)
+//        let chatNavigationController = UINavigationController.init(rootViewController: chatVC)
+//        navController.present(chatNavigationController, animated: true)
+//    }
     
     static public func pushFeedback(navController: UINavigationController, adminUid: String, title: String) {
         let feedbackVC = BDFeedbackViewController()

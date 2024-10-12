@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+platform :ios, '12.0'
+
+target 'bytedesk-demo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for bytedesk-demo
+
+  target 'bytedesk-demoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'bytedesk-demoUITests' do
+    # Pods for testing
+  end
+
+end

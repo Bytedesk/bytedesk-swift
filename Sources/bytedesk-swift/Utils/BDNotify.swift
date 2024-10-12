@@ -107,7 +107,6 @@ public class BDNotify: NSObject {
         messageModel.client = BDSettings.getClient()
         //
         messageModel.user?.uid = BDSettings.getUid()
-        messageModel.user?.username = BDSettings.getUsername()
         messageModel.user?.nickname = BDSettings.getNickname()
         messageModel.user?.avatar = BDSettings.getAvatar()
         
@@ -117,11 +116,10 @@ public class BDNotify: NSObject {
     static func notifyMessageImageSend(_ tid: String, imageUrl: String, localId: NSNumber) {
         let messageModel = BDMessageModel()
         messageModel.type = BD_MESSAGE_TYPE_IMAGE
-        messageModel.imageUrl = imageUrl
+        messageModel.content = imageUrl
         messageModel.client = BDSettings.getClient()
         //
         messageModel.user?.uid = BDSettings.getUid()
-        messageModel.user?.username = BDSettings.getUsername()
         messageModel.user?.nickname = BDSettings.getNickname()
         messageModel.user?.avatar = BDSettings.getAvatar()
         

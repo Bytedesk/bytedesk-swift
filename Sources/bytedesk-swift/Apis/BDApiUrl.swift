@@ -8,6 +8,13 @@
 import Foundation
 
 struct BDApiUrl {
+    
+    
+    static let initUserURL = BytedeskConstants.API_BASE_URL + "/visitor/api/v1/init";
+    static let requestThreadURL = BytedeskConstants.API_BASE_URL + "/visitor/api/v1/thread";
+    static let sendRestMessageURL = BytedeskConstants.API_BASE_URL + "/visitor/api/v1/message/send";
+    
+    
     //此处根据本地键值 debug ,用来作为baseURL,一个可以用来做测试的接口,一个定义为线上接口.可以设置一个按钮，管理debug字段，重启app就可以更换接口
     // http://localhost:8000/spider/meiyu/status
     // http://localhost:8000/uid/baidu2
@@ -19,7 +26,7 @@ struct BDApiUrl {
     // 登录
     static let loginPasswordURL = BD_REST_API_HOST + "oauth/token"
     // 请求会话
-    static let requestThreadURL = BD_REST_API_HOST + "api/thread/request"
+//    static let requestThreadURL = BD_REST_API_HOST + "api/thread/request"
     // 转人工
     static let requestAgentURL = BD_REST_API_HOST + "api/thread/agent"
     //

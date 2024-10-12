@@ -29,7 +29,7 @@ extension BDHTTPManager {
             switch response.result {
                 case let .success(data):
                     // debugPrint("success \(data), status_code: \(data.status_code!), message: \(data.message!)")
-                    if (data.status_code == 200) {
+                    if (data.code == 200) {
                         success(data)
                     } else {
                         // debugPrint("failure status: \(data.status_code!)")
@@ -64,7 +64,7 @@ extension BDHTTPManager {
             switch response.result {
                 case let .success(data):
                     // debugPrint("success \(data), status_code: \(data.status_code!), message: \(data.message!)")
-                    if (data.status_code == 200) {
+                    if (data.code == 200) {
                         success(data)
                     } else {
                         // debugPrint("failure status: \(data.status_code!)")
@@ -98,7 +98,7 @@ extension BDHTTPManager {
             switch response.result {
                 case let .success(data):
                     // debugPrint("success \(data), status_code: \(data.status_code!), message: \(data.message!)")
-                    if (data.status_code == 200) {
+                    if (data.code == 200) {
                         success(data)
                     } else {
                         // debugPrint("failure status: \(data.status_code!)")
@@ -132,7 +132,7 @@ extension BDHTTPManager {
             switch response.result {
                 case let .success(data):
                     // debugPrint("success \(data), status_code: \(data.status_code!), message: \(data.message!)")
-                    if (data.status_code == 200) {
+                    if (data.code == 200) {
                         success(data)
                     } else {
                         // debugPrint("failure status: \(data.status_code!)")
@@ -167,7 +167,7 @@ extension BDHTTPManager {
             switch response.result {
                 case let .success(data):
                     // debugPrint("success \(data), status_code: \(data.status_code!), message: \(data.message!)")
-                    if (data.status_code == 200) {
+                    if (data.code == 200) {
                         success(data)
                     } else {
                         // debugPrint("failure status: \(data.status_code!)")
@@ -202,7 +202,7 @@ extension BDHTTPManager {
             switch response.result {
                 case let .success(data):
                     // debugPrint("success \(data), status_code: \(data.status_code!), message: \(data.message!)")
-                    if (data.status_code == 200) {
+                    if (data.code == 200) {
                         success(data)
                     } else {
                         // debugPrint("failure status: \(data.status_code!)")

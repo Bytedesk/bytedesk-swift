@@ -30,9 +30,9 @@ public class BDHTTPManager: NSObject {
             switch response.result {
                 case let .success(data):
                     // debugPrint("success \(data), status_code: \(data.status_code!), message: \(data.message!)")
-                    if (data.status_code == 200) {
+                    if (data.code == 200) {
                         BDSettings.setUserInfo(data.data!)
-                        BDSettings.setPassword(data.data?.username)
+//                        BDSettings.setPassword(data.data?.username)
                         success(data)
                     } else {
                         // debugPrint("failure status: \(data.status_code!)")
@@ -113,13 +113,13 @@ public class BDHTTPManager: NSObject {
                                 //
                                 let user = BDUserModel()
                                 user.uid = uid!
-                                user.username = usernameCompose
+//                                user.username = usernameCompose
                                 user.nickname = nickname
                                 user.avatar = avatar
-                                user.subDomain = subDomain
+//                                user.subDomain = subDomain
                                 //
                                 let userResult = BDUserResult()
-                                userResult.status_code = -1
+                                userResult.code = -1
                                 userResult.message = "用户名已经存在，直接登录"
                                 userResult.data = user
                                 //

@@ -54,7 +54,7 @@ class BDMsgImageContentView: BDMsgBaseContentView {
 //        imageView?.loadFrom(url: message!.imageUrl!)
         
         // https://github.com/onevcat/Kingfisher
-        let url = URL(string: message!.imageUrl!)
+        let url = URL(string: message!.content!)
         // Using Kingfisher to load and cache the image
         imageView!.kf.setImage(with: url)
         //

@@ -147,21 +147,7 @@ class BDMsgTableViewCell: UITableViewCell, BDMsgBaseContentViewDelegate {
 //        debugPrint("\(#function)")
         // 复制操作的实现
         let pasteboard = UIPasteboard.general
-        if (self.messageModel?.type == BD_MESSAGE_TYPE_TEXT) {
-            pasteboard.string = self.messageModel?.content
-        } else if (self.messageModel?.type == BD_MESSAGE_TYPE_IMAGE) {
-            pasteboard.string = self.messageModel?.imageUrl
-        } else if (self.messageModel?.type == BD_MESSAGE_TYPE_FILE) {
-            pasteboard.string = self.messageModel?.fileUrl
-        } else if (self.messageModel?.type == BD_MESSAGE_TYPE_VOICE) {
-            pasteboard.string = self.messageModel?.voiceUrl
-        } else if (self.messageModel?.type == BD_MESSAGE_TYPE_VIDEO) {
-            pasteboard.string = self.messageModel?.videoUrl
-        } else if (self.messageModel?.type == BD_MESSAGE_TYPE_ROBOT) {
-            pasteboard.string = self.messageModel?.content
-        } else {
-            pasteboard.string = self.messageModel?.content
-        }
+        pasteboard.string = self.messageModel?.content
         //
         resignFirstResponder()
     }

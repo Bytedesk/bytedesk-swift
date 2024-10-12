@@ -7,28 +7,27 @@
 
 import Foundation
 
-// ObservableObject, Identifiable
 public class BDThreadModel: Codable, Identifiable, ObservableObject {
     //
     init() {
-        visitor = BDUserModel()
-        agent = BDUserModel()
-        workGroup = BDWorkGroupModel()
+        user = BDUserModel()
     }
     //
-    var tid: String?
-    var topic: String? = ""
-    var appointed: Bool? = false
+    public var uid: String?
+    public var topic: String? = ""
+    public var type: String?
+    public var status: String?
+    public var extra: String?
     //
-    var content: String?
-    var timestamp: String?
-    var unreadCount: Int?
-    var type: String?
-    //
-    var client: String?
-    //
-    var visitor: BDUserModel?
-    var agent: BDUserModel?
-    var workGroup: BDWorkGroupModel?
+    public var user: BDUserModel?
     
+    // MARK: - Codable
+    enum CodingKeys: String, CodingKey {
+        case uid
+        case topic
+        case type
+        case status
+        case extra
+        case user
+    }
 }
