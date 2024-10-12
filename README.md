@@ -2,7 +2,7 @@
  * @Author: jackning 270580156@qq.com
  * @Date: 2023-09-05 16:33:36
  * @LastEditors: jackning 270580156@qq.com
- * @LastEditTime: 2024-10-10 23:14:08
+ * @LastEditTime: 2024-10-12 16:17:40
  * @Description: bytedesk.com https://github.com/Bytedesk/bytedesk
  *   Please be aware of the BSL license restrictions before installing Bytedesk IM – 
  *  selling, reselling, or hosting Bytedesk IM as a service is a breach of the terms and automatically terminates your rights under the license. 
@@ -16,6 +16,12 @@
 
 - [官网](https://www.weiyuai.cn/)
 - [萝卜丝->请切换此分支](https://gitee.com/270580156/bytedesk-swift/tree/luobosi/)
+
+## Language
+
+- [English](./README.md)
+- [中文](./README.zh.md)
+
 
 ## 部分功能
 
