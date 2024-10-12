@@ -15,7 +15,7 @@
 # 微语 Swift SDK
 
 - [官网](https://www.weiyuai.cn/)
-- [微语->请切换此分支](https://gitee.com/270580156/bytedesk-swift/tree/luobosi/)
+- [萝卜丝->请切换此分支](https://gitee.com/270580156/bytedesk-swift/tree/luobosi/)
 
 ## 部分功能
 
