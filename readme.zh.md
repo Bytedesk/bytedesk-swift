@@ -2,7 +2,7 @@
  * @Author: jackning 270580156@qq.com
  * @Date: 2023-09-05 16:33:36
  * @LastEditors: jackning 270580156@qq.com
- * @LastEditTime: 2024-10-12 16:17:45
+ * @LastEditTime: 2024-10-21 16:07:46
  * @Description: bytedesk.com https://github.com/Bytedesk/bytedesk
  *   Please be aware of the BSL license restrictions before installing Bytedesk IM – 
  *  selling, reselling, or hosting Bytedesk IM as a service is a breach of the terms and automatically terminates your rights under the license. 
@@ -46,14 +46,14 @@
 
 建议: Xcode Version 14.3，最低兼容: iOS 13
 
-### 1. 本地集成
+### 方法 1. 本地集成
 
 此方法适用于有自定义界面需求的开发者
 
 - 下载源码，直接拖到自己项目中
 - 选择项目，选中项目TARGET，选中 General，在 framework 中添加 bytedesk_swift.framework
 
-### 2. Swift Package Manager (SPM)
+### 方法 2. Swift Package Manager (SPM)
 
 <!-- FIXME: 集成报错：
 public headers ("include") directory path for 'bytedesk-oc' is invalid or not contained in the target -->
@@ -99,17 +99,14 @@ github 'bytedesk-swift/bytedesk-swift' ~> 3.0.0
 
 ## 对话SDK
 
-<!-- - [iOS-oc](https://github.com/Bytedesk/bytedesk-oc) -->
-<!-- - [React-native](https://github.com/bytedesk/bytedesk-react-native) -->
-<!-- - [Vue](https://github.com/bytedesk/bytedesk-vue) -->
-<!-- - [Browser-Extension](https://github.com/Bytedesk/bytedesk-browser-extention) -->
-<!-- - [Vscode-plugin](https://github.com/bytedesk/bytedesk-vscode-plugin) -->
-- [iOS-swift](https://github.com/Bytedesk/bytedesk-swift)
-- [Android](https://github.com/bytedesk/bytedesk-android)
-- [Flutter](https://github.com/bytedesk/bytedesk-flutter)
-- [React](https://github.com/bytedesk/bytedesk-react)
-- [UniApp](https://github.com/bytedesk/bytedesk-uniapp)
-- [Web](https://github.com/bytedesk/bytedesk-web)
+| Project     | Description           | Forks          | Stars             |
+|-------------|-----------------------|----------------|-------------------|
+| [iOS-swift](https://github.com/bytedesk/bytedesk-swift) | iOS swift  | ![GitHub forks](https://img.shields.io/github/forks/bytedesk/bytedesk-swift) | ![GitHub Repo stars](https://img.shields.io/github/stars/Bytedesk/bytedesk-swift)                 |
+| [Android](https://github.com/bytedesk/bytedesk-android) | Android | ![GitHub forks](https://img.shields.io/github/forks/bytedesk/bytedesk-android) | ![GitHub Repo stars](https://img.shields.io/github/stars/bytedesk/bytedesk-android)  |
+| [Flutter](https://github.com/bytedesk/bytedesk-flutter) | Flutter | ![GitHub forks](https://img.shields.io/github/bytedesk/bytedesk-flutter)| ![GitHub Repo stars](https://img.shields.io/github/stars/bytedesk/bytedesk-flutter) |
+| [React](https://github.com/bytedesk/bytedesk-react) | React | ![GitHub forks](https://img.shields.io/github/forks/bytedesk/bytedesk-react) | ![GitHub Repo stars](https://img.shields.io/github/stars/bytedesk/bytedesk-react) |
+| [UniApp](https://github.com/bytedesk/bytedesk-uniapp) | Uniapp | ![GitHub forks](https://img.shields.io/github/forks/bytedesk/bytedesk-uniapp) | ![GitHub Repo stars](https://img.shields.io/github/stars/bytedesk/bytedesk-uniapp) |
+| [Web/Vue](https://github.com/bytedesk/bytedesk-web) | Web/Vue | ![GitHub forks](https://img.shields.io/github/forks/bytedesk/bytedesk-web) | ![GitHub Repo stars](https://img.shields.io/github/stars/bytedesk/bytedesk-web) |
 
 ## 客户端
 
@@ -122,7 +119,7 @@ github 'bytedesk-swift/bytedesk-swift' ~> 3.0.0
 ## 技术栈
 
 <!-- - [sofaboot](https://github.com/sofastack/sofa-boot/blob/master/README_ZH.md) for im server 基于金融级云原生架构-->
-- [springboot-3.x for 后端](https://github.com/Bytedesk/bytedesk)
+- [spring boot-3.x for 后端](https://github.com/Bytedesk/bytedesk)
 - [python for ai](https://github.com/Bytedesk/bytedesk-ai)
 - [react for web前端](https://github.com/Bytedesk/bytedesk-react)
 - [flutter for 移动客户端(ios&android)](https://github.com/Bytedesk/bytedesk-mobile)
