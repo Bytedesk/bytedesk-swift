@@ -40,6 +40,7 @@ public class BytedeskHttpApis: NSObject {
                 BDSettings.setAvatar(data.data?.avatar)
                 // connect
                 BytedeskStompApi.sharedInstance().connect()
+                // TODO: 拉取离线消息
                 //
                 success(data)
                 return

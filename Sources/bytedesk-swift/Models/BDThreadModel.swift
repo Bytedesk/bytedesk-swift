@@ -16,7 +16,7 @@ public class BDThreadModel: Codable, Identifiable, ObservableObject {
     public var uid: String?
     public var topic: String? = ""
     public var type: String?
-    public var status: String?
+    public var state: String?
     public var extra: String?
     //
     public var user: BDUserModel?
@@ -26,7 +26,7 @@ public class BDThreadModel: Codable, Identifiable, ObservableObject {
         case uid
         case topic
         case type
-        case status
+        case state
         case extra
         case user
     }

@@ -150,7 +150,7 @@ extension BDChatKFViewController: UITableViewDelegate, UITableViewDataSource, BD
         messageModel.thread?.uid = mThreadModel?.uid
         messageModel.thread?.topic = mThreadModel?.topic
         messageModel.thread?.type = mThreadModel?.type
-        messageModel.thread?.status = mThreadModel?.status
+        messageModel.thread?.state = mThreadModel?.state
         messageModel.thread?.user = mThreadModel?.user
         //
         messageModel.user?.uid = BDSettings.getUid()

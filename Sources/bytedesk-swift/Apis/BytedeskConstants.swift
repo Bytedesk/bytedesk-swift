@@ -10,14 +10,14 @@ import Foundation
 struct BytedeskConstants {
     
     // 本地测试
-    // static let IS_DEBUG = true;
-    // static let API_BASE_URL = "http://127.0.0.1:9003";
-    // static let STOMP_WS_URL = "ws://127.0.0.1:9003/stomp";
+    //  static let IS_DEBUG = true;
+    //  static let API_BASE_URL = "http://127.0.0.1:9003";
+    //  static let STOMP_WS_URL = "ws://127.0.0.1:9003/stomp";
 
     // 线上环境
-    static let IS_DEBUG = false;
-    static let API_BASE_URL = "https://api.weiyuai.cn";
-    static let STOMP_WS_URL = "wss://api.weiyuai.cn/stomp";
+   static let IS_DEBUG = false;
+   static let API_BASE_URL = "https://api.weiyuai.cn";
+   static let STOMP_WS_URL = "wss://api.weiyuai.cn/stomp";
 //
     static let HTTP_CLIENT = "ios";
     static let PLATFORM = "weiyuai";
@@ -80,7 +80,7 @@ struct BytedeskConstants {
     static let THREAD_TYPE_GROUP = "GROUP";
     static let THREAD_TYPE_LEAVEMSG = "LEAVEMSG";
     static let THREAD_TYPE_FEEDBACK = "FEEDBACK";
-    static let THREAD_TYPE_ASISTANT = "ASISTANT";
+    static let THREAD_TYPE_ASSISTANT = "ASSISTANT";
     static let THREAD_TYPE_CHANNEL = "CHANNEL";
     static let THREAD_TYPE_LOCAL = "LOCAL";
 //
@@ -176,7 +176,7 @@ struct BytedeskConstants {
     static let MESSAGE_TYPE_INVITE_ACCEPT = "INVITE_ACCEPT"; // 邀请-接受
     static let MESSAGE_TYPE_INVITE_REJECT = "INVITE_REJECT"; // 邀请-拒绝
 //
-    static let TOPIC_FILE_ASISTANT = "file";
+    static let TOPIC_FILE_ASSISTANT = "file";
     static let TOPIC_SYSTEM_NOTIFICATION = "system";
 // 注意：没有 "/" 开头，防止stomp主题中奖 "/" 替换为 "."之后，在最前面多余一个 "."
     static let TOPIC_USER_PREFIX = "user/";
@@ -197,7 +197,7 @@ struct BytedeskConstants {
     static let TOPIC_ORG_KB_PREFIX = "org/kb/";
     static let TOPIC_ORG_KBDOC_PREFIX = "org/kbdoc/";
 //
-    static let KB_TYPE_ASISTANT = "ASISTANT";
+    static let KB_TYPE_ASSISTANT = "ASSISTANT";
     static let KB_TYPE_HELPDOC = "HELPDOC";
     static let KB_TYPE_LLM = "LLM";
     static let KB_TYPE_KEYWORD = "KEYWORD";

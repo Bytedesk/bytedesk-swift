@@ -617,6 +617,11 @@
 				INFOPLIST_FILE = "bytedesk-demo/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "微语SwiftDemo";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSCameraUsageDescription = "拍摄照片并发送图片给对方";
+				INFOPLIST_KEY_NSContactsUsageDescription = "读取并同步通讯录";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "录制语音并发送录音给对方";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "读取并发送图片给对方";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "读取并发送图片给对方";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -649,6 +654,11 @@
 				INFOPLIST_FILE = "bytedesk-demo/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "微语SwiftDemo";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSCameraUsageDescription = "拍摄照片并发送图片给对方";
+				INFOPLIST_KEY_NSContactsUsageDescription = "读取并同步通讯录";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "录制语音并发送录音给对方";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "读取并发送图片给对方";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "读取并发送图片给对方";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

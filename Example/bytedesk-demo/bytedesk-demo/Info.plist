@@ -21,15 +21,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>拍摄照片并发送图片给对方</string>
-	<key>NSContactsUsageDescription</key>
-	<string>读取并同步通讯录</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>录制语音并发送录音给对方</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>读取并发送图片给对方</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>读取并发送图片给对方</string>
 </dict>
 </plist>

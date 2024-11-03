@@ -34,15 +34,15 @@ class KFApiTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if (section == 0) {
-            return "客服接口"
-        }
-        return "技术支持"
-    }
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        if (section == 0) {
+//            return "客服接口"
+//        }
+//        return "技术支持"
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
@@ -57,9 +57,11 @@ class KFApiTableViewController: UITableViewController {
         if (indexPath.section == 0) {
             cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
             cell.textLabel?.text = kefuApiArray[indexPath.row];
-        } else {
-            cell.textLabel?.text = "官网: weiyuai.cn";
         }
+//        else {
+////            "官网: weiyuai.cn"
+//            cell.textLabel?.text = String(localized: "test")
+//        }
         return cell
     }
     
